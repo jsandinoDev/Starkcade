@@ -2,3 +2,8 @@ target
 .snfoundry_cache/
 .env
 local-devnet
+
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
