@@ -1,4 +1,14 @@
-# Starkcade CoinFlip Game 🎲
+
+<div align="center">
+  
+
+  ***Starkcade CoinFlip 🎲***
+
+![starkcade Small](https://github.com/user-attachments/assets/0516a744-d09f-48e0-aea4-fa17bd82bb81)
+
+</div>
+
+
 
 Welcome to **Starkcade CoinFlip**, an interactive and decentralized CoinFlip game built on the Starknet blockchain. Test your luck by placing bets on heads or tails, and see if you can beat the odds!
 
