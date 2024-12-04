@@ -31,7 +31,7 @@ const ScaffoldStarkApp = ({ children }: { children: React.ReactNode }) => {
         )}
         <Header />
         <main className="relative flex flex-col flex-1">{children}</main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
       <Toaster />
     </>
