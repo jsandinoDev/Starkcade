@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import StarryBackground from "~~/app/starryBackground/_components/starryBackground";
+import StarryBackground from "../../../components/starryBackground/_components/StarryBackground";
 
 export const ConflipMainPage = () => {
   const [selectedChoice, setSelectedChoice] = useState("");
@@ -16,7 +16,7 @@ export const ConflipMainPage = () => {
           <img
             src="/coin-removebg.png"
             alt="Web3 Arcade Coin"
-            className="w-72 h-72 md:w-96 md:h-96 mx-auto"
+            className="w-48 h-48 md:w-64 md:h-64 mx-auto"
           />
         </div>
 
