@@ -13,6 +13,7 @@ import { devnet } from "@starknet-react/chains";
 import { SwitchTheme } from "./SwitchTheme";
 import { useAccount, useNetwork, useProvider } from "@starknet-react/core";
 import { BlockIdentifier } from "starknet";
+import StarryBackground from "../components/starryBackground/_components/StarryBackground";
 
 type HeaderMenuLink = {
   label: string;
@@ -114,7 +115,8 @@ export const Header = () => {
   ]);
 
   return (
-    <div className=" lg:static top-0 navbar min-h-0 flex-shrink-0 justify-between z-20 px-0 sm:px-2">
+    <div className=" lg:static top-0 navbar min-h-0 flex-shrink-0 justify-between z-20 px-0 sm:px-2 border-b"
+    style={{ borderBottomColor: '#EAB305' }}>
       <div className="navbar-start w-auto lg:w-1/2 -mr-2">
         <div className="lg:hidden dropdown" ref={burgerMenuRef}>
           <label
@@ -157,7 +159,7 @@ export const Header = () => {
           </div>
           <div className="flex flex-col">
             <span className="font-bold leading-tight">Starkcade</span>
-            <span className="text-xs">Starknet dev stack</span>
+            {/* <span className="text-xs">Starknet Network</span> */}
           </div>
         </Link>
         <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">
@@ -172,11 +174,11 @@ export const Header = () => {
         ) : null}
         <CustomConnectButton />
         {/* <FaucetButton /> */}
-        <SwitchTheme
+        {/* <SwitchTheme
           className={`pointer-events-auto ${
             isLocalNetwork ? "mb-1 lg:mb-0" : ""
           }`}
-        />
+        /> */}
       </div>
     </div>
   );

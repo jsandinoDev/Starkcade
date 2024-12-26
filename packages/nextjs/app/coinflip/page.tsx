@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { ConflipMainPage } from './_components/ConflipMainPage'
+import { ConflipMainPage } from './_components/ConflipPlayPage'
 import { getMetadata } from "~~/utils/scaffold-stark/getMetadata";
 
 export const metadata = getMetadata({

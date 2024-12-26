@@ -1,23 +1,24 @@
 "use client";
 
-import Link from "next/link";
 import type { NextPage } from "next";
-import { Address } from "~~/components/scaffold-stark";
 import { useAccount } from "~~/hooks/useAccount";
-import { Address as AddressType } from "@starknet-react/chains";
-import Image from "next/image";
+import StarryBackground from "../components/starryBackground/_components/StarryBackground";
+import { useRouter } from "next/navigation"; 
 
 const Home: NextPage = () => {
   const connectedAddress = useAccount();
 
+  const router = useRouter();
+
+  const handlePlayButtonClick = () => {
+    router.push("/coinflip");
+  };
+
   return (
     <>
-      <div className="relative flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600">
-        {/* Overlay for effect */}
-        <div className="absolute inset-0 bg-opacity-50 bg-black"></div>
-
-        <div className="relative text-center text-white z-10 px-4">
-          {/* Header Text */}
+      <div className="relative flex justify-center items-center min-h-screen text-white overflow-hidden">
+        <StarryBackground />
+        <div className="relative text-center p-4 space-y-6 z-10">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
             Welcome to the Starknet Arcade
           </h1>
@@ -26,8 +27,7 @@ const Home: NextPage = () => {
             rewards
           </p>
 
-
-          <div >
+          <div>
             <img
               src="/starkcade.png"
               alt="Web3 Arcade Coin"
@@ -35,8 +35,8 @@ const Home: NextPage = () => {
             />
           </div>
 
-          {/* Call-to-Action Button */}
-          <button className="px-6 py-3 bg-yellow-500 text-black rounded-full text-lg font-semibold hover:bg-yellow-400 transition duration-300 ">
+          <button className="px-6 py-3 bg-yellow-500 text-black rounded-full text-lg font-semibold hover:bg-yellow-400 transition duration-300 "
+          onClick={handlePlayButtonClick}>
             Start Playing Now
           </button>
         </div>
