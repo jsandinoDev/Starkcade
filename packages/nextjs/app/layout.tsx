@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ScaffoldStarkAppWithProviders } from "~~/components/ScaffoldStarkAppWithProviders";
 import "~~/styles/globals.css";
 import { ThemeProvider } from "~~/components/ThemeProvider";
+import StarryBackground from "~~/components/starryBackground/_components/StarryBackground";
 
 export const metadata: Metadata = {
   title: "Starkcade",
@@ -15,6 +16,7 @@ const ScaffoldStarkApp = ({ children }: { children: React.ReactNode }) => {
       <body>
         <ThemeProvider enableSystem>
           <ScaffoldStarkAppWithProviders>
+          <StarryBackground />
             {children}
           </ScaffoldStarkAppWithProviders>
         </ThemeProvider>
