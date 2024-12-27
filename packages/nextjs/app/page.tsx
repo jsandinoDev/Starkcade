@@ -18,7 +18,7 @@ const Home: NextPage = () => {
     <>
       <div className="relative flex justify-center items-center min-h-screen text-white overflow-hidden">
         <StarryBackground />
-        <div className="relative text-center p-4 space-y-6 z-10">
+        <div className="relative text-center p-4 space-y-6 -z-5">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
             Welcome to the Starknet Arcade
           </h1>

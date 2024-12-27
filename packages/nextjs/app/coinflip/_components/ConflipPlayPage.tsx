@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import StarryBackground from "../../../components/starryBackground/_components/StarryBackground";
 
 export const ConflipMainPage = () => {
   const [selectedChoice, setSelectedChoice] = useState("");
@@ -9,9 +8,7 @@ export const ConflipMainPage = () => {
 
   return (
     <div className="relative flex justify-center items-center min-h-screen text-white overflow-hidden">
-      <StarryBackground />
-
-      <div className="relative text-center p-4 space-y-6 z-10">
+      <div className="relative text-center p-4 space-y-6 -z-5">
         <div className="flex justify-center">
           <img
             src="/coin-removebg.png"
