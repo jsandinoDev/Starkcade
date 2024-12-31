@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
-import { ConflipMainPage } from './_components/ConflipPlayPage'
+import { CoinflipPage } from './_components/CoinflipPage'
 import { getMetadata } from "~~/utils/scaffold-stark/getMetadata";
 
 export const metadata = getMetadata({
-  title: "Coninflip",
+  title: "Coinflip",
   description:
     "Interactive and decentralized CoinFlip game built on the Starknet blockchain.",
 });
@@ -11,7 +11,7 @@ export const metadata = getMetadata({
 const Debug: NextPage = () => {
   return (
     <>
-        <ConflipMainPage />
+        <CoinflipPage />
     </>
   );
 };
