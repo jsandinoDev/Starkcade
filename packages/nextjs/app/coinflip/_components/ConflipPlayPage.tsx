@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export const ConflipMainPage = () => {
+export const ConflipPlayPage = () => {
   const [selectedChoice, setSelectedChoice] = useState("");
   const [selectedAmount, setSelectedAmount] = useState(0);
 
