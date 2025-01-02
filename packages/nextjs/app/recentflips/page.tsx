@@ -1,11 +1,13 @@
-import React from 'react'
+import Heropage from "./_components/hero"
+import type { NextPage } from "next";
 
-const page = () => {
+const Debug: NextPage = () => {
   return (
-    <div.....................>
-      hello
-    </div>
-  )
-}
+    <>
+        <Heropage />
+    </>
+  );
+};
 
-export default page
+export default Debug;
+
