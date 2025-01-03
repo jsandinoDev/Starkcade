@@ -3,9 +3,9 @@ import type { NextPage } from "next";
 
 const Debug: NextPage = () => {
   return (
-    <>
+  
         <RecentFlip />
-    </>
+    
   );
 };
 
