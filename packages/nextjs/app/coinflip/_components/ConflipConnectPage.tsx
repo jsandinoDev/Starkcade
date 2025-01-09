@@ -2,9 +2,30 @@
 
 import { useAccountConnection } from "~~/hooks/starkcade/useAccountConnection";
 
+const FLIPS = [
+  {
+    user: "Ricardish",
+    message: "flipped 0.01 and doubled",
+    time: "5 min ago",
+    icon: "/happy_coin.png",
+  },
+  {
+    user: "ThunderTrader",
+    message: "flipped 2.5 and got rugged",
+    time: "7 min ago",
+    icon: "/sad_coin.png",
+  },
+  {
+    user: "AmazingOctopus",
+    message: "flipped 6 and doubled",
+    time: "10 min ago",
+    icon: "/happy_coin.png",
+  },
+];
+
 export const ConflipConnectPage = () => {
   const { status } = useAccountConnection();
-  
+
   const handleConnect = () => {
     console.log(status);
     // if (status === "disconnected") return <ConnectModal />;
@@ -36,26 +57,7 @@ export const ConflipConnectPage = () => {
       <h2 className="mt-7 text-lg font-semibold tracking-wide">Recent Flips</h2>
       <div className="w-full max-w-lg mt-4 rounded-xl p-4">
         <div className="space-y-2">
-          {[
-            {
-              user: "Ricardish",
-              message: "flipped 0.01 and doubled",
-              time: "5 min ago",
-              icon: "/happy_coin.png",
-            },
-            {
-              user: "ThunderTrader",
-              message: "flipped 2.5 and got rugged",
-              time: "7 min ago",
-              icon: "/sad_coin.png",
-            },
-            {
-              user: "AmazingOctopus",
-              message: "flipped 6 and doubled",
-              time: "10 min ago",
-              icon: "/happy_coin.png",
-            },
-          ].map((flip, index) => (
+          {FLIPS.map((flip, index) => (
             <div
               key={index}
               className="flex items-center justify-between p-3 bg-white rounded-lg shadow-sm"
