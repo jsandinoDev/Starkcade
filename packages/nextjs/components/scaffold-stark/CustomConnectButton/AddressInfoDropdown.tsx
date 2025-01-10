@@ -113,7 +113,7 @@ export const AddressInfoDropdown = ({
         >
           <NetworkOptions hidden={!selectingNetwork} />
           <li className={selectingNetwork ? "hidden" : ""}>
-            {addressCopied ? (
+            {/* {addressCopied ? (
               <div className="btn-sm !rounded-xl flex gap-3 py-3">
                 <CheckCircleIcon
                   className="text-xl font-normal h-6 w-4 cursor-pointer ml-2 sm:ml-0"
@@ -139,7 +139,7 @@ export const AddressInfoDropdown = ({
                   <span className=" whitespace-nowrap">Copy address</span>
                 </div>
               </CopyToClipboard>
-            )}
+            )} */}
           </li>
           <li className={selectingNetwork ? "hidden" : ""}>
             <label
