@@ -21,7 +21,7 @@ export const TxReceipt = (
   return (
     <div className="flex text-sm rounded-[5px] peer-checked:rounded-b-none min-h-0 bg-input py-0">
       <div className="mt-1 pl-2">
-        {txResultCopied ? (
+        {/* {txResultCopied ? (
           <CheckCircleIcon
             className="ml-1.5 text-xl font-normal text-sky-600 h-5 w-5 cursor-pointer"
             aria-hidden="true"
@@ -48,7 +48,7 @@ export const TxReceipt = (
               aria-hidden="true"
             />
           </CopyToClipboard>
-        )}
+        )} */}
       </div>
       <div className="flex-wrap collapse collapse-arrow">
         <input type="checkbox" className="min-h-0 peer" />
