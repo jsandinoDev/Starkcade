@@ -14,7 +14,7 @@ Welcome to **Starkcade CoinFlip**, an interactive and decentralized CoinFlip gam
 
 ## 📝 Overview
 
-The game leverages Starknet for decentralized, low-cost, and secure interactions, ensuring a fun, trustless gaming experience. This project is created using **Scaffold Stark**.
+The game leverages Starknet for decentralized, low-cost, and secure interactions, ensuring a fun, trustless gaming experience. This project was created using **Scaffold Stark**.
 
 
 ## 💻 Local Development
@@ -31,3 +31,40 @@ The game leverages Starknet for decentralized, low-cost, and secure interactions
 
 More info: [Scaffold Docs](https://docs.scaffoldstark.com/)
 
+##  SetUp Guide 
+
+### 1. Fork the Repo
+
+### 2. Clone the Repo
+```bash
+//Replace with your fork path
+
+git clone https://github.com/Chonete-Builders/Starkcade.git 
+cd Starkcade
+```
+
+### 3. Install Dependencies
+
+
+Using yarn:
+```bash
+yarn install
+```
+### 4. Run Front-End
+
+Using yarn:
+```bash
+yarn start
+```
+
+## Contribution guide
+
+1. In the forked repository.
+2. Create a new branch for your feature or bug fix:
+   ```bash
+   git checkout -b feature/new-feature
+   ```
+3. Commit your changes and push to your fork.
+4. Open a pull request to the main repository.
+
+---
