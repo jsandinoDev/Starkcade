@@ -1,26 +1,6 @@
 "use client";
 import Image from "next/image";
-
-const flips = [
-  {
-    imageSrc: "/happy_coin.png",
-    description: "You flipped 0.01 and doubled",
-    time: "5",
-    imageAlt: "Happy Coin",
-  },
-  {
-    imageSrc: "/sad_coin.png",
-    description: "You flipped 2.5 and got rugged",
-    time: "7",
-    imageAlt: "Sad Coin",
-  },
-  {
-    imageSrc: "/happy_coin.png",
-    description: "You flipped 6 and doubled",
-    time: "10",
-    imageAlt: "Happy Coin",
-  },
-];
+import { MYFLIPS } from "../../assets/constants";
 
 export default function RecentFlip() {
   const handleButtonClick = () => {
@@ -32,7 +12,7 @@ export default function RecentFlip() {
       <div className="recentflip w-[40%] max-w-[560px] min-w-[280px] h-auto">
         <h2 className="text-2xl mb-10 w-full text-gray-800">MY RECENT FLIPS</h2>
         <div className="space-y-1">
-          {flips.map((flip, index) => (
+          {MYFLIPS.map((flip, index) => (
             <div
               key={index}
               className={`flex items-center justify-between pb-1  ${index < 2 ? "border-b border-gray-400 " : ""}`}
