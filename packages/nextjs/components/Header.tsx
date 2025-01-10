@@ -3,7 +3,7 @@
 import React, { useCallback, useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Bars3Icon, CircleStackIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, CircleStackIcon, UserIcon } from "@heroicons/react/24/outline";
 import { useOutsideClick } from "~~/hooks/scaffold-stark";
 import { CustomConnectButton } from "~~/components/scaffold-stark/CustomConnectButton";
 import { usePathname } from "next/navigation";
@@ -26,9 +26,14 @@ export const menuLinks: HeaderMenuLink[] = [
     icon: <CircleStackIcon className="h-4 w-4" />,
   },
   {
-    label: "Recentflips",
+    label: "My Recentflips",
     href: "/recentflips",
     icon: <CircleStackIcon className="h-4 w-4" />,
+  },
+  {
+    label: "Profile",
+    href: "/profile",
+    icon: <UserIcon className="h-4 w-4" />,
   },
 ];
 
