@@ -16,6 +16,8 @@ Welcome to **Starkcade CoinFlip**, an interactive and decentralized CoinFlip gam
 
 The game leverages Starknet for decentralized, low-cost, and secure interactions, ensuring a fun, trustless gaming experience. This project was created using **Scaffold Stark**.
 
+## 📞 Join our community
+[Discord](https://discord.gg/ZSyShWJmHB)
 
 ## 💻 Local Development
 
