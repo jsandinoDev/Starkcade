@@ -134,7 +134,7 @@ p {
 }
 
 .recentflip{
-  background: var(--Schemes-Surface-Container-High, rgba(236, 230, 240, 1));
+  background: var(--Schemes-Surface-Container-High, hsl(276, 25%, 92%));
   
   top: 169px;
   left: 248px;
