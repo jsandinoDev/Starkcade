@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 
 interface CoinFlipProps {
   src: string;
@@ -22,7 +23,13 @@ const CoinFlip: React.FC<CoinFlipProps> = ({ src }) => {
           isFlipping ? "animate-flip" : ""
         }`}
       >
-        <img src={src} alt="Coin" className="w-full h-full object-contain" />
+        <Image
+          src={src}
+          width={500}
+          height={500}
+          className="object-contain"
+          alt="Coin"
+        />
       </div>
     </div>
   );
