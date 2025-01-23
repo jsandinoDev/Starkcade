@@ -34,11 +34,11 @@ mod ArcadeGame {
 
     #[constructor]
     fn constructor(
-        ref self: ContractState, 
-        game_id: u128, 
-        admin: ContractAddress, 
-        game_name: felt252, 
-        description: felt252, 
+        ref self: ContractState,
+        game_id: u128,
+        admin: ContractAddress,
+        game_name: felt252,
+        description: felt252,
         winning_amount: u64,
     ) {
         self.game_id.write(game_id);
