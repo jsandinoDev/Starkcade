@@ -1,0 +1,36 @@
+name: Contracts CI
+
+on:
+  push:
+    paths:
+      - ".github/workflows/contracts.yaml"
+      - "packages/snfoundry/**"
+      - "package.json"
+  pull_request:
+    branches:
+      - main
+      - test-develop
+    paths:
+      - "packages/snfoundry/**"
+
+jobs:
+  ci:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-22.04]
+        node: [lts/*]
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Install scarb
+        uses: software-mansion/setup-scarb@v1
+        with:
+          scarb-lock: ./packages/snfoundry/contracts/Scarb.lock
+    
+      - name: Install snfoundry
+        uses: foundry-rs/setup-snfoundry@v3
+        
