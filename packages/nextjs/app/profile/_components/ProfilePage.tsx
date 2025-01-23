@@ -59,7 +59,7 @@ export const ProfilePage = () => {
                         </div>
                         <ul className="w-full flex flex-col -space-y-0.5">
                         {PROFILE_LINKS.map((link, index) => (
-                        <Link href={link.href} className="w-full py-2 px-4 border border-[#999] cursor-pointer shadow-sm drop-shadow flex flex-row space-x-2 justify-between items-center rounded-md bg-[#fefefe]">
+                        <Link key={link.name} href={link.href} className="w-full py-2 px-4 border border-[#999] cursor-pointer shadow-sm drop-shadow flex flex-row space-x-2 justify-between items-center rounded-md bg-[#fefefe]">
                             <span className="font-semibold text-sm text-[#333]">{link.name}</span>
                             <ChevronRightIcon className="w-4 h-4 text-[#000]"/>
                         </Link>
