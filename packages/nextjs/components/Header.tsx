@@ -8,6 +8,7 @@ import { useOutsideClick } from "~~/hooks/scaffold-stark";
 import { CustomConnectButton } from "~~/components/scaffold-stark/CustomConnectButton";
 import { usePathname } from "next/navigation";
 import StarryBackground from "../components/starryBackground/_components/StarryBackground";
+import ToggleMode from "./ToggleMode";
 
 type HeaderMenuLink = {
   label: string;
@@ -118,6 +119,9 @@ export const Header = () => {
             </ul>
           </div>
           <div className="flex ml-auto">
+            <ToggleMode />
+          </div>
+          <div className="flex mr-2">
             <CustomConnectButton />
           </div>
         </div>
