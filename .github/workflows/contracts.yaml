@@ -34,3 +34,5 @@ jobs:
       - name: Install snfoundry
         uses: foundry-rs/setup-snfoundry@v3
         
+      - name: Check Code Format
+        run: scarb fmt --check
