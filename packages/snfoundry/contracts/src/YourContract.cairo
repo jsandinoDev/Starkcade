@@ -87,7 +87,7 @@ mod YourContract {
                         new_greeting: self.greeting.read(),
                         premium: true,
                         value: 100,
-                    }
+                    },
                 );
         }
         fn withdraw(ref self: ContractState) {
