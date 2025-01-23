@@ -39,7 +39,7 @@ mod ArcadeGame {
         admin: ContractAddress,
         game_name: felt252,
         description: felt252,
-        winning_amount: u64,
+        winning_amount: u64
     ) {
         self.game_id.write(game_id);
         self.admin.write(admin);
