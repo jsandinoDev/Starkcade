@@ -36,5 +36,5 @@ jobs:
         
       - name: Check Code Format
         run: |
-            cd contracts
+            cd ./packages/snfoundry/contracts
             scarb fmt --check
