@@ -38,3 +38,9 @@ jobs:
         run: |
             cd ./packages/snfoundry/contracts
             scarb fmt --check
+            
+      - name: Build Contracts
+        run: scarb build
+    
+      - name: Run Tests
+        run: scarb test
