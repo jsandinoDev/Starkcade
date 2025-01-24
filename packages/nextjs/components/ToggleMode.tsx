@@ -7,9 +7,6 @@ const ToggleMode = () => {
   const isDarkMode = theme === "dark"; 
 
   const toggleMode = () => {
-    // const newMode = isDarkMode ? "light" : "dark";
-    // setTheme(newMode); // Force theme change
-
     theme == "dark" ? setTheme("light") : setTheme("dark"); 
   };
 

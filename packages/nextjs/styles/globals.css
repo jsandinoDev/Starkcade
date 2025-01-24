@@ -40,7 +40,7 @@ p {
   filter: blur(229px);
   position: absolute;
   top: 0;
-  display: none /* Hidden */
+  display: none 
 }
 
 .circle-gradient-blue {
@@ -50,7 +50,7 @@ p {
   position: absolute;
   top: 0;
   right: 0;
-  display: none /* Hidden */
+  display: none 
 }
 
 .border-gradient {
@@ -102,7 +102,7 @@ p {
   border-radius: 630px;
   background: #7353d2;
   filter: blur(229px);
-  display: none /* Hidden */
+  display: none 
 }
 
 .circle-gradient-blue-dark {
@@ -112,7 +112,7 @@ p {
   position: absolute;
   top: 0;
   right: 0;
-  display: none /* Hidden */
+  display: none 
 }
 
 @layer utilities {

@@ -2,7 +2,7 @@ import React from "react";
 
 const StarryBackground = () => {
   return (
-    <div className="absolute inset-0 overflow-hidden"> {/* bg-gradient-to-b from-[#243B55] to-[#141E30] */}
+    <div className="absolute inset-0 overflow-hidden">
       <div
         className="absolute w-[1px] h-[1px] bg-transparent animate-stars"
         style={{

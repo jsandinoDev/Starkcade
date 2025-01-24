@@ -16,7 +16,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <div className="relative flex justify-center items-center min-h-scree overflow-hidden">
+      <div className="relative flex justify-center items-center min-h-screen overflow-hidden">
         <StarryBackground />
         <div className="relative text-center p-4 space-y-6 -z-5">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
