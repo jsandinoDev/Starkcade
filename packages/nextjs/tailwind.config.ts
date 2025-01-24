@@ -43,7 +43,7 @@ module.exports = {
             background: "#000000",
           },
           ".bg-main": {
-            background: "#FFFFFF",
+            background: "#dbd9d9",
           },
           ".bg-underline": {
             background:
@@ -120,7 +120,7 @@ module.exports = {
               "var(--gradient, linear-gradient(90deg, #000000 0%, #000000 100%))",
           },
           ".bg-main": {
-            background: "#141A31",
+            background: "#20344c",
           },
           ".bg-underline": {
             background: "#5368B4",
