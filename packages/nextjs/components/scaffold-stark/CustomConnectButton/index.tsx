@@ -39,20 +39,15 @@ export const CustomConnectButton = () => {
     }
   }, [account]);
 
-  // Show connect modal when the wallet is disconnected
   if (status === "disconnected") return <ConnectModal />;
 
-  // Show wrong network dropdown if the wallet is on the wrong network
   if (accountChainId !== targetNetwork.id) {
     return <WrongNetworkDropdown />;
   }
 
-  // Handle connected state (redesigned)
   return (
     <div className="flex items-center gap-4">
-      {/* Button showing balance and intuitive connection status */}
       <button className="flex items-center bg-gray-800 text-yellow-500 px-6 py-3 rounded-lg shadow-md hover:bg-gray-700">
-        {/* Wallet status */}
         <div className="flex items-center gap-2">
           <Balance
             address={accountAddress as Address}
@@ -62,7 +57,6 @@ export const CustomConnectButton = () => {
         </div>
       </button>
 
-      {/* Dropdown for additional wallet options */}
       <AddressInfoDropdown
         address={accountAddress as Address}
         displayName={""}
