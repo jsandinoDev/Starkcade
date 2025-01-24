@@ -101,7 +101,7 @@ module.exports = {
           "base-100": "#1C223B",
           "base-200": "#2A3655",
           "base-300": "#141a30",
-          "base-content": "#EAB305",  // TODO: YELLOW
+          "base-content": "#EAB305", // TODO: YELLOW
           info: "#385183",
           success: "#34EEB6",
           warning: "#FFCF72",
@@ -169,6 +169,7 @@ module.exports = {
       },
     ],
   },
+
   theme: {
     extend: {
       boxShadow: {
@@ -176,6 +177,7 @@ module.exports = {
       },
       animation: {
         "pulse-fast": "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        flip: "flip 0.6s linear infinite",
         stars: "move 50s linear infinite",
         "stars-slow": "move 100s linear infinite",
         "stars-slower": "move 150s linear infinite",
@@ -195,7 +197,11 @@ module.exports = {
           from: { transform: "translateY(0px)" },
           to: { transform: "translateY(-2000px)" },
         },
-      }
+        flip: {
+          "0%": { transform: "rotateX(0deg)" },
+          "100%": { transform: "rotateX(360deg)" },
+        },
+      },
     },
   },
 };
