@@ -5,12 +5,11 @@ import { useState } from "react";
 export const ConflipPlayPage = () => {
   const [selectedChoice, setSelectedChoice] = useState("");
   const [selectedAmount, setSelectedAmount] = useState(0);
-  const [isProcessing, setIsProcessing] = useState(false); // New state for processing transaction
+  const [isProcessing, setIsProcessing] = useState(false);
 
   return (
     <div className="relative flex justify-center items-center min-h-screen text-white overflow-hidden">
       {isProcessing ? (
-        // Only show the coin image during processing
         <div className="flex flex-col gap-[1em] justify-center items-center min-h-screen">
           <img
             src="/coin-removebg.png"
@@ -22,10 +21,8 @@ export const ConflipPlayPage = () => {
           </h1>
         </div>
       ) : (
-        // Game Ui when processing is done
         <div className="relative text-center p-4 space-y-6 -z-5">
           <div className="flex justify-center">
-            {/* coin image */}
             <img
               src="/coin-removebg.png"
               alt="Web3 Arcade Coin"
@@ -104,8 +101,8 @@ export const ConflipPlayPage = () => {
           <div className="flex justify-center">
             <button
               onClick={() => {
-                setIsProcessing(true); // Set the processing state to true
-                setTimeout(() => setIsProcessing(false), 3000); // Reset state after 3 seconds
+                setIsProcessing(true);
+                setTimeout(() => setIsProcessing(false), 3000);
               }}
               className="w-[312px] py-3 bg-yellow-500 text-black border-2 rounded-md font-bold uppercase hover:bg-yellow-400 transition"
             >
