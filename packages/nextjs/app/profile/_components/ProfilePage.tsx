@@ -118,7 +118,6 @@ export const ProfilePage = () => {
         )}
       </div>
       <div className="relative text-center p-4 space-y-6 -z-5 w-full flex flex-col justify-center items-center gap-4">
-        {/* User name  */}
         <div className="flex justify-center h-4 text-white text-4xl">
           {userName}
         </div>

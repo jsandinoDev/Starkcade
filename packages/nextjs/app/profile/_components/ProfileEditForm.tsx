@@ -29,7 +29,6 @@ export const ProfileEditForm = ({
       </div>
 
       <div className="relative flex w-full gap-10 justify-center  overflow-hidden">
-        {/* Cancel button  */}
         <button
           className="w-1/2 py-3 bg-black text-yellow-500 font-bold rounded-lg "
           onClick={handleCancel}
@@ -37,7 +36,6 @@ export const ProfileEditForm = ({
           Cancel
         </button>
 
-        {/* Save button  */}
         <button
           className="w-1/2 py-3 bg-yellow-500 text-black font-bold rounded-lg hover:bg-yellow-400 transition"
           onClick={() => {
