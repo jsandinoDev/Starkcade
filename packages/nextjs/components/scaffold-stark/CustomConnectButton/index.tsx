@@ -14,21 +14,20 @@ import { useEffect, useState } from "react";
 import ConnectModal from "./ConnectModal";
 
 /**
- * Custom Connect Button (watch balance + custom design)
+ * Custom Connect Button (Simplified for Intuitiveness)
  */
 export const CustomConnectButton = () => {
   useAutoConnect();
-  const networkColor = useNetworkColor();
-  const { targetNetwork } = useTargetNetwork();
-  const { account, status, address: accountAddress } = useAccount();
-  const [accountChainId, setAccountChainId] = useState<bigint>(0n);
-  const { chain } = useNetwork();
+  const networkColor = useNetworkColor(); // Get the color of the network for UI styling
+  const { targetNetwork } = useTargetNetwork(); // Get the target network configuration
+  const { account, status, address: accountAddress } = useAccount(); // Get wallet account details
+  const [accountChainId, setAccountChainId] = useState<bigint>(0n); // Store wallet's current chain ID
+  const { chain } = useNetwork(); // Get the current network information
 
   const blockExplorerAddressLink = accountAddress
     ? getBlockExplorerAddressLink(targetNetwork, accountAddress)
     : undefined;
 
-  // effect to get chain id and address from account
   useEffect(() => {
     if (account) {
       const getChainId = async () => {
@@ -40,33 +39,36 @@ export const CustomConnectButton = () => {
     }
   }, [account]);
 
+  // Show connect modal when the wallet is disconnected
   if (status === "disconnected") return <ConnectModal />;
 
+  // Show wrong network dropdown if the wallet is on the wrong network
   if (accountChainId !== targetNetwork.id) {
     return <WrongNetworkDropdown />;
   }
 
+  // Handle connected state (redesigned)
   return (
-    <>
-      <div className="flex flex-col items-center max-sm:mt-2">
-        <Balance
-          address={accountAddress as Address}
-          className="min-h-0 h-auto"
-        />
-        <span className="text-xs ml-1" style={{ color: networkColor }}>
-          {chain.name}
-        </span>
-      </div>
+    <div className="flex items-center gap-4">
+      {/* Button showing balance and intuitive connection status */}
+      <button className="flex items-center bg-gray-800 text-yellow-500 px-6 py-3 rounded-lg shadow-md hover:bg-gray-700">
+        {/* Wallet status */}
+        <div className="flex items-center gap-2">
+          <Balance
+            address={accountAddress as Address}
+            className="text-sm font-semibold"
+          />
+          <span className="text-sm font-semibold">Connected</span>
+        </div>
+      </button>
+
+      {/* Dropdown for additional wallet options */}
       <AddressInfoDropdown
         address={accountAddress as Address}
         displayName={""}
         ensAvatar={""}
         blockExplorerAddressLink={blockExplorerAddressLink}
       />
-      <AddressQRCodeModal
-        address={accountAddress as Address}
-        modalId="qrcode-modal"
-      />
-    </>
+    </div>
   );
 };
