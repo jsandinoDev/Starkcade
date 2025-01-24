@@ -20,7 +20,7 @@ export default function Leaderboard() {
             {LEADERBOARD.map((leaderboard, index) => (
               <div
                 key={index}
-                className={`flex items-center justify-between pb-1  ${index < ((LEADERBOARD as unknown as array).length - 1) ? "border-b border-gray-400 " : ""}`}
+                className={`flex items-center justify-between pb-1  ${index < ((LEADERBOARD as unknown as Array<any>).length - 1) ? "border-b border-gray-400 " : ""}`}
               >
                 <div className="flex items-center gap-2">
                   <Image
@@ -55,7 +55,7 @@ export default function Leaderboard() {
             {LIVE_STATS.map((livestat, index) => (
               <div
                 key={index}
-                className={`flex items-center justify-between pb-1  ${index < ((LIVE_STATS as unknown as array).length - 1) ? "border-b border-gray-400 " : ""}`}
+                className={`flex items-center justify-between pb-1  ${index < ((LIVE_STATS as unknown as Array<any>).length - 1) ? "border-b border-gray-400 " : ""}`}
               >
                 <div className="flex items-center gap-2">
                   <Image
@@ -90,7 +90,7 @@ export default function Leaderboard() {
             {CONNECTED_USERS.map((connected_user, index) => (
               <div
                 key={index}
-                className={`flex items-center justify-between pb-1  ${index < ((CONNECTED_USERS as unknown as array).length - 1) ? "border-b border-gray-400 " : ""}`}
+                className={`flex items-center justify-between pb-1  ${index < ((CONNECTED_USERS as unknown as Array<any>).length - 1) ? "border-b border-gray-400 " : ""}`}
               >
                 <div className="flex items-center gap-2">
                   <Image
