@@ -14,8 +14,6 @@ import { ProfileEditForm } from "./ProfileEditForm";
 const USERNAME_MAX_LENGTH = 20;
 
 export const ProfilePage = () => {
-  // Add simple behavior to the ProfilePage component that allows users to save their profile name limited to frontend.
-  // To do - implement a more robust solution that saves the user's information
   const [userName, setUserName] = useState(() => {
     const savedBalance = localStorage.getItem("userName");
     return savedBalance ?? "No Set";
@@ -23,7 +21,6 @@ export const ProfilePage = () => {
 
   const [editProfile, setEditProfile] = useState<boolean>(false);
   const [profileDropdown, setProfileDropdown] = useState<boolean>(false);
-  // Add simple behavior to the ProfilePage component that allows users to save their profile name limited to frontend.
 
   const handleSave = (newName: string) => {
     const trimmedName = newName.trim();
