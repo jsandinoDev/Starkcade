@@ -9,7 +9,6 @@ import {
   CheckCircleIcon,
   ChevronDownIcon,
   DocumentDuplicateIcon,
-  QrCodeIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
 import { useLocalStorage } from "usehooks-ts";
@@ -113,42 +112,26 @@ export const AddressInfoDropdown = ({
         >
           <NetworkOptions hidden={!selectingNetwork} />
           <li className={selectingNetwork ? "hidden" : ""}>
-            {/* {addressCopied ? (
-              <div className="btn-sm !rounded-xl flex gap-3 py-3">
-                <CheckCircleIcon
-                  className="text-xl font-normal h-6 w-4 cursor-pointer ml-2 sm:ml-0"
-                  aria-hidden="true"
-                />
-                <span className=" whitespace-nowrap">Copy address</span>
-              </div>
-            ) : (
-              <CopyToClipboard
-                text={address}
-                onCopy={() => {
-                  setAddressCopied(true);
-                  setTimeout(() => {
-                    setAddressCopied(false);
-                  }, 800);
-                }}
-              >
-                <div className="btn-sm !rounded-xl flex gap-3 py-3">
-                  <DocumentDuplicateIcon
-                    className="text-xl font-normal h-6 w-4 cursor-pointer ml-2 sm:ml-0"
-                    aria-hidden="true"
-                  />
-                  <span className=" whitespace-nowrap">Copy address</span>
-                </div>
-              </CopyToClipboard>
-            )} */}
+            <button
+              className="btn-sm !rounded-xl flex gap-3 py-3"
+              onClick={() => {
+                window.location.href = "/transaction-history";
+              }}
+            >
+              <ArrowsRightLeftIcon className="h-6 w-4 ml-2 sm:ml-0" />
+              <span className="whitespace-nowrap">Transaction history</span>
+            </button>
           </li>
           <li className={selectingNetwork ? "hidden" : ""}>
-            <label
-              htmlFor="qrcode-modal"
+            <button
               className="btn-sm !rounded-xl flex gap-3 py-3"
+              onClick={() => {
+                window.location.href = "/leaderboard";
+              }}
             >
-              <QrCodeIcon className="h-6 w-4 ml-2 sm:ml-0" />
-              <span className="whitespace-nowrap">View QR Code</span>
-            </label>
+              <UserCircleIcon className="h-6 w-4 ml-2 sm:ml-0" />
+              <span className="whitespace-nowrap">Leaderboard</span>
+            </button>
           </li>
           {chain.network != "devnet" ? (
             <li className={selectingNetwork ? "hidden" : ""}>
@@ -222,14 +205,21 @@ export const AddressInfoDropdown = ({
                               className="w-full flex flex-col"
                             >
                               <button
-                                className={`${isDarkMode ? "hover:bg-[#385183] border-[#385183]" : "hover:bg-gradient-light "} border rounded-md text-neutral py-[8px] pl-[10px] pr-16 flex items-center gap-4`}
+                                className={`${
+                                  isDarkMode
+                                    ? "hover:bg-[#385183] border-[#385183]"
+                                    : "hover:bg-gradient-light "
+                                } border rounded-md text-neutral py-[8px] pl-[10px] pr-16 flex items-center gap-4`}
                                 onClick={(e) => handleConnectBurner(e, ix)}
                               >
                                 <BlockieAvatar
                                   address={burnerAcc.accountAddress}
                                   size={35}
                                 ></BlockieAvatar>
-                                {`${burnerAcc.accountAddress.slice(0, 6)}...${burnerAcc.accountAddress.slice(-4)}`}
+                                {`${burnerAcc.accountAddress.slice(
+                                  0,
+                                  6,
+                                )}...${burnerAcc.accountAddress.slice(-4)}`}
                               </button>
                             </div>
                           ))}
@@ -243,21 +233,6 @@ export const AddressInfoDropdown = ({
               document.body,
             )}
 
-          {/* TODO: reinstate if needed */}
-          {/* {allowedNetworks.length > 1 ? (
-            <li className={selectingNetwork ? "hidden" : ""}>
-              <button
-                className="btn-sm !rounded-xl flex gap-3 py-3"
-                type="button"
-                onClick={() => {
-                  setSelectingNetwork(true);
-                }}
-              >
-                <ArrowsRightLeftIcon className="h-6 w-4 ml-2 sm:ml-0" />{" "}
-                <span>Switch Network</span>
-              </button>
-            </li>
-          ) : null} */}
           <li className={selectingNetwork ? "hidden" : ""}>
             <button
               className="menu-item text-secondary-content btn-sm !rounded-xl flex gap-3 py-3"
