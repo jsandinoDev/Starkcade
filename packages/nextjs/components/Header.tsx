@@ -27,7 +27,7 @@ export const menuLinks: HeaderMenuLink[] = [
     icon: <CircleStackIcon className="h-4 w-4" />,
   },
   {
-    label: "My Recentflips",
+    label: "Recent Flips",
     href: "/recentflips",
     icon: <CircleStackIcon className="h-4 w-4" />,
   },
