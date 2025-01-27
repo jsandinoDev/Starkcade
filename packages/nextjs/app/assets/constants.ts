@@ -40,3 +40,25 @@ export const FLIPS = [
     icon: "/happy_coin.png",
   },
 ];
+
+
+export const TRANSACTIONS = [
+  {
+    message: "flipped 0.01 and doubled",
+    time: "5",
+    txnHash: "0x02394u4iun4bjnfeeofnek399ri43494b4jj888888fj4i",
+  },
+  {
+    message: "withdrew 50 STRK to 0x023030w3450430933303345",
+    time: "8",
+    txnHash: "0x02394u4iun4bjnfeeofnek399ri43494b4jj888888fj4i",
+  },
+  {
+    message: "flipped 0.01 and got rugged",
+    time: "20",
+    txnHash: "0x02394u4iun4bjnfeeofnek399ri43494b4jj888888fj4i",
+  },
+];
+
+
+
