@@ -42,12 +42,12 @@ export default function TransactionHistory({ address }: { address: `0x${string}`
           {TRANSACTIONS.map((transaction, index) => (
             <div
               key={index}
-              className={`flex items-center justify-between pb-1  ${index < 2 ? "border-b border-gray-400 " : ""}`}
+              className={`flex items-center justify-between pb-1 last-of-type:border-0 border-b border-gray-400`}
             >
               <div className="flex items-center gap-4">
                 <p className="text-gray-800">
                     <span className="mr-1">You</span>
-                  <span className="font-bold">
+                  <span className="">
                     {transaction.message.split(" ")[0]}
                   </span>{" "}
                   {transaction.message.split(" ").slice(1).join(" ")}

@@ -58,6 +58,11 @@ export const TRANSACTIONS = [
     time: "20",
     txnHash: "0x02394u4iun4bjnfeeofnek399ri43494b4jj888888fj4i",
   },
+  {
+    message: "used 0.1 STRK, won 5 STRK",
+    time: "30",
+    txnHash: "0x02394u4iun4bjnfeeofnek399ri43494b4jj888888fj4i",
+  },
 ];
 
 
