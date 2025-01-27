@@ -3,7 +3,7 @@
 import React, { useCallback, useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Bars3Icon, CircleStackIcon, ChartBarIcon, UserIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, CircleStackIcon, ChartBarIcon, UserIcon, QueueListIcon } from "@heroicons/react/24/outline";
 import { useOutsideClick } from "~~/hooks/scaffold-stark";
 import { CustomConnectButton } from "~~/components/scaffold-stark/CustomConnectButton";
 import { usePathname } from "next/navigation";
@@ -39,7 +39,7 @@ export const menuLinks: HeaderMenuLink[] = [
   {
     label: "Transaction History",
     href: "/history",
-    icon: <CircleStackIcon className="h-4 w-4" />,
+    icon: <QueueListIcon className="h-4 w-4" />,
   },
   {
     label: "Profile",

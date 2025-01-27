@@ -3,7 +3,6 @@
 import { useState } from "react";
 import CoinFlip from "../../coinflipAnimation";
 
-
 export const ConflipPlayPage = () => {
   const [selectedChoice, setSelectedChoice] = useState("");
   const [selectedAmount, setSelectedAmount] = useState(0);
@@ -13,18 +12,14 @@ export const ConflipPlayPage = () => {
     <div className="relative flex justify-center items-center min-h-screen text-white overflow-hidden">
       {isProcessing ? (
         <div className="flex flex-col gap-[1em] justify-center items-center min-h-screen">
-          <img
-            src="/coin-removebg.png"
-            alt="Web3 Arcade Coin"
-            className="w-48 h-48 md:w-64 md:h-64 mx-auto animate-spin duration-800"
-          />
+          <div className="relative text-center p-4 space-y-6 -z-5">
+            <div className="flex justify-center">
+              <CoinFlip src="/coin-removebg.png" />
+            </div>
+          </div>
           <h1 className="text-yellow-600 font-[600] text-[25px]">
             Please wait, transaction is processing...
-          </h1>
-      <div className="relative text-center p-4 space-y-6 -z-5">
-        <div className="flex justify-center">
-          <CoinFlip src="/coin-removebg.png" />
-        </div>
+          </h1>        </div>
       ) : (
         <div className="relative text-center p-4 space-y-6 -z-5">
           <div className="flex justify-center">
