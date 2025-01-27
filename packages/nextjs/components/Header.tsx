@@ -3,11 +3,12 @@
 import React, { useCallback, useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Bars3Icon, CircleStackIcon, UserIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, CircleStackIcon, ChartBarIcon, UserIcon } from "@heroicons/react/24/outline";
 import { useOutsideClick } from "~~/hooks/scaffold-stark";
 import { CustomConnectButton } from "~~/components/scaffold-stark/CustomConnectButton";
 import { usePathname } from "next/navigation";
 import StarryBackground from "../components/starryBackground/_components/StarryBackground";
+import ToggleMode from "./ToggleMode";
 
 type HeaderMenuLink = {
   label: string;
@@ -26,9 +27,14 @@ export const menuLinks: HeaderMenuLink[] = [
     icon: <CircleStackIcon className="h-4 w-4" />,
   },
   {
-    label: "My Recentflips",
+    label: "Recent Flips",
     href: "/recentflips",
     icon: <CircleStackIcon className="h-4 w-4" />,
+  },
+  {
+    label: "Leaderboard",
+    href: "/leaderboard",
+    icon: <ChartBarIcon className="h-4 w-4" />,
   },
   {
     label: "Transaction History",
@@ -123,6 +129,9 @@ export const Header = () => {
             </ul>
           </div>
           <div className="flex ml-auto">
+            <ToggleMode />
+          </div>
+          <div className="flex mr-2">
             <CustomConnectButton />
           </div>
         </div>

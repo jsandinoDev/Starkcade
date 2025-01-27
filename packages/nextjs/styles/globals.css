@@ -40,6 +40,7 @@ p {
   filter: blur(229px);
   position: absolute;
   top: 0;
+  display: none 
 }
 
 .circle-gradient-blue {
@@ -49,6 +50,7 @@ p {
   position: absolute;
   top: 0;
   right: 0;
+  display: none 
 }
 
 .border-gradient {
@@ -100,6 +102,7 @@ p {
   border-radius: 630px;
   background: #7353d2;
   filter: blur(229px);
+  display: none 
 }
 
 .circle-gradient-blue-dark {
@@ -109,6 +112,7 @@ p {
   position: absolute;
   top: 0;
   right: 0;
+  display: none 
 }
 
 @layer utilities {
@@ -134,7 +138,7 @@ p {
 }
 
 .recentflip{
-  background: var(--Schemes-Surface-Container-High, rgba(236, 230, 240, 1));
+  background: var(--Schemes-Surface-Container-High, hsl(276, 25%, 92%));
   
   top: 169px;
   left: 248px;
