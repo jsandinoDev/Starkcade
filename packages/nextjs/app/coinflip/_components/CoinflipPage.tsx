@@ -35,14 +35,15 @@ export const Modal = ({ isOpen, onClose, children }) => {
 export const CoinflipPage = () => {
 
 
-    const tips = [
-        "Choose heads or tails.",
-"Enter the amount you want to play.",
-" Click 'Double or Nothing'",
-"Approve the amount in your wallet.",
-"Wait for the transaction to complete."
+   const tips = [
+  "Select 'Heads' or 'Tails' to make your choice.",
+  "Enter the amount you wish to play (stake).",
+  "Click 'Double or Nothing' to start the game.",
+  "Approve the transaction in your wallet.",
+  "Wait for the blockchain transaction to complete.",
+  "If you win, your balance will be updated automatically!",
+];
 
-    ]
 
     const { account } = useAccountConnection();
     const [isModalOpen, setModalOpen] = useState(false);
@@ -60,7 +61,7 @@ export const CoinflipPage = () => {
 
 
            <div 
-  className='fixed justify-end bottom-0 mx-4 my-4 right-0 cursor-help'
+  className='fixed justify-end bottom-0 mx-4 my-4 right-0 cursor-pointer'
   title="Game rules and instructions"
   onClick={openModal}
 >
@@ -69,13 +70,15 @@ export const CoinflipPage = () => {
 
 
        <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <div className=" justify-between ">
-            <h3 className="text-xl font-bold">Game Rules and Instructions</h3>
+  <div className="flex flex-col gap-4">
+    <h3 className="text-xl font-bold border-b pb-2 text-center">
+      Game Rules and Instructions
+    </h3>
 
-            <ul className="flex flex-col gap-2 pl-6 text-gray-700">
+  <ul className="flex flex-col gap-3 pl-6 text-gray-700">
   {tips.map((tip, index) => (
-    <li 
-      className="list-disc list-inside text-sm leading-relaxed"
+    <li
+      className="list-decimal list-inside text-sm leading-relaxed hover:text-teal-700 hover:font-medium transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-500"
       key={index}
     >
       {tip}
@@ -83,11 +86,13 @@ export const CoinflipPage = () => {
   ))}
 </ul>
 
-<h4 className="text-xl font-bold"> Have fun playing. Cheers!</h4>
-            
-          </div>
-          
-       </Modal>
+
+    <h4 className="text-lg font-bold text-center mt-4 text-green-600">
+      Have fun playing. Cheers!
+    </h4>
+  </div>
+</Modal>
+
 
 
           
