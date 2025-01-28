@@ -75,7 +75,7 @@ export const CoinflipPage = () => {
       Game Rules and Instructions
     </h3>
 
-  <ul className="flex flex-col gap-3 pl-6 text-gray-700">
+  <ul className="flex flex-col gap-3 pl-6 text-gray-400">
   {tips.map((tip, index) => (
     <li
       className="list-decimal list-inside text-sm leading-relaxed hover:text-teal-700 hover:font-medium transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-500"
