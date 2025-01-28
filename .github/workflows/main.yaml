@@ -1,0 +1,48 @@
+name: Next.js CI
+
+on:
+  push:
+    paths:
+      - ".github/workflows/main.yaml"
+      - "packages/nextjs/**"
+      - "package.json"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "packages/nextjs/**"
+jobs:
+  ci:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-22.04]
+        node: [lts/*]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Setup node env
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install dependencies (Next.js)
+        run: |
+          yarn config set nodeLinker node-modules
+          yarn install --no-immutable
+        working-directory: ./packages/nextjs
+
+      - name: Install scarb
+        uses: software-mansion/setup-scarb@v1
+        with:
+          scarb-version: "2.8.4"
+          scarb-lock: ./packages/snfoundry/contracts/Scarb.lock
+
+      - name: Run Next.js Tests
+        run: yarn test:nextjs
