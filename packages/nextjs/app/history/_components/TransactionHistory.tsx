@@ -19,7 +19,6 @@ export default function TransactionHistory({ address }: { address: `0x${string}`
   return (
     <div className="relative flex flex-col justify-center items-center min-h-screen overflow-hidden">
       <div className="relative text-center p-4 space-y-6 -z-5 w-full flex flex-col justify-center items-center gap-4">
-        {/* User name  */}
         <div className='flex justify-center h-4 text-4xl'>
           {name || "User Profile"}
         </div>
