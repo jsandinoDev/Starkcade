@@ -11,7 +11,7 @@ export const ConflipPlayPage = () => {
   return (
     <div className="relative flex justify-center items-center min-h-screen text-white overflow-hidden">
       {isProcessing ? (
-       <> <div className="flex flex-col gap-[1em] justify-center items-center min-h-screen">
+        <div className="flex flex-col gap-[1em] justify-center items-center min-h-screen">
           <img
             src="/coin-removebg.png"
             alt="Web3 Arcade Coin"
@@ -26,11 +26,7 @@ export const ConflipPlayPage = () => {
             </div>
           </div>
         </div>
-        </div>
-        </div>
-       </>
       ) : (
-       <>
         <div className="relative text-center p-4 space-y-6 -z-5">
           <div className="flex justify-center">
             <img
@@ -120,8 +116,7 @@ export const ConflipPlayPage = () => {
             </button>
           </div>
         </div>
-        </>
       )}
     </div>
-  )
-  }
+  );
+};
