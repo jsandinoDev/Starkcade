@@ -274,6 +274,15 @@ const universalErc20Abi = [
 
 export const LAST_CONNECTED_TIME_LOCALSTORAGE_KEY = "lastConnectedTime";
 
+export const tips = [
+  "Select 'Heads' or 'Tails' to make your choice.",
+  "Enter the amount you wish to play (stake).",
+  "Click 'Double or Nothing' to start the game.",
+  "Approve the transaction in your wallet.",
+  "Wait for the blockchain transaction to complete.",
+  "If you win, your balance will be updated automatically!",
+];
+
 export {
   devnetEthClassHash,
   devnetStrkClassHash,
