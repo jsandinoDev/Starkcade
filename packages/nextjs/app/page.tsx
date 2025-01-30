@@ -4,6 +4,7 @@ import type { NextPage } from "next";
 import { useAccount } from "~~/hooks/useAccount";
 import StarryBackground from "../components/starryBackground/_components/StarryBackground";
 import { useRouter } from "next/navigation"; 
+import Image from "next/image";
 
 const Home: NextPage = () => {
   const connectedAddress = useAccount();
@@ -28,10 +29,12 @@ const Home: NextPage = () => {
           </p>
 
           <div>
-            <img
+            <Image
               src="/starkcade.png"
               alt="Web3 Arcade Coin"
               className="w-72 h-72 md:w-96 md:h-96 mx-auto"
+              width={288}
+              height={288}
             />
           </div>
 

@@ -133,8 +133,9 @@ export const FaucetSepolia = () => {
                       <Image
                         alt="Starknet Developers Hub"
                         className="cursor-pointer"
-                        fill
                         src={faucet.img}
+                        layout="fill"  
+                        objectFit="cover"
                       />
                     </div>
                     <span className="text-sm m-0">{faucet.name}</span>

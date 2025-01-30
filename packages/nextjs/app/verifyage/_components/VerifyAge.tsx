@@ -13,10 +13,12 @@ export const VerifyAge = () => {
   return (
     <div className="relative flex justify-center items-center min-h-screen h-full bg-[#1F3149]">
       <div className="relative text-center flex flex-col items-center gap-8">
-        <img
+        <Image
           src="/coin-removebg.png"
           alt="Web3 Arcade Coin"
-          className="w-32 h-32"
+          //className="w-32 h-32"
+          width={128}
+          height={128}
         />
         <div className="w-[592px] bg-[#f8f9fa] rounded-2xl p-6 shadow-lg">
           <div className="flex justify-between items-start mb-8">
