@@ -90,7 +90,7 @@ export const Address = ({
 
   const blockExplorerAddressLink = getBlockExplorerAddressLink(
     targetNetwork,
-    checkSumAddress,
+    checkSumAddress
   );
   let displayAddress =
     checkSumAddress?.slice(0, 6) + "..." + checkSumAddress?.slice(-4);
@@ -106,13 +106,14 @@ export const Address = ({
       <div className="flex-shrink-0">
         {getStarknetPFPIfExists(profile?.profilePicture) ? (
           //eslint-disable-next-line @next/next/no-img-element
-          <Image
-            src={profile?.profilePicture || ""}
-            alt="Profile Picture"
-            className="rounded-full h-6 w-6"
-            width={24}
-            height={24}
-          />
+          <div className="relative w-6 h-6">
+            <Image
+              src={profile?.profilePicture || ""}
+              alt="Profile Picture"
+              className="rounded-full object-cover"
+              fill
+            />
+          </div>
         ) : (
           <BlockieAvatar
             address={checkSumAddress}

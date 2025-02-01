@@ -11,8 +11,8 @@ const CoinFlip: React.FC<CoinFlipProps> = ({ src }) => {
   const handleFlip = () => {
     setIsFlipping(true);
     setTimeout(() => {
-      setIsFlipping(false); // Reset after animation
-    }, 3000); // Matches animation duration
+      setIsFlipping(false);
+    }, 3000);
   };
 
   return (
@@ -23,13 +23,9 @@ const CoinFlip: React.FC<CoinFlipProps> = ({ src }) => {
           isFlipping ? "animate-flip" : ""
         }`}
       >
-        <Image
-          src={src}
-          width={500}
-          height={500}
-          className="object-contain"
-          alt="Coin"
-        />
+        <div className="relative w-24 h-24">
+          <Image src={src} alt="Coin" className="object-contain" fill />
+        </div>
       </div>
     </div>
   );
