@@ -17,18 +17,13 @@ export const ConflipPlayPage = () => {
             <Image
               src="/coin-removebg.png"
               alt="Web3 Arcade Coin"
-              className="object-contain"
+              className="object-contain animate-spin duration-800"
               fill
             />
           </div>
           <h1 className="text-yellow-600 font-[600] text-[25px]">
             Please wait, transaction is processing...
           </h1>
-          <div className="relative text-center p-4 space-y-6 -z-5">
-            <div className="flex justify-center">
-              <CoinFlip src="/coin-removebg.png" />
-            </div>
-          </div>
         </div>
       ) : (
         <div className="relative text-center p-4 space-y-6 -z-5">
@@ -42,7 +37,6 @@ export const ConflipPlayPage = () => {
             />
           </div>
           </div>
-
           <div className="flex justify-center relative">
             <button className="flex items-center px-4 py-2 text-sm border border-white rounded-md hover:bg-gray-800 transition">
               <span className="mr-2">⭘</span>

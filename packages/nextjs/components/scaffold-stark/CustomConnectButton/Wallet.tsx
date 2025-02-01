@@ -12,7 +12,7 @@ const Wallet = ({
   loader: ({ src }: { src: string }) => string;
   handleConnectWallet: (
     e: React.MouseEvent<HTMLButtonElement>,
-    connector: Connector,
+    connector: Connector
   ) => void;
 }) => {
   const [clicked, setClicked] = useState(false);
@@ -35,14 +35,15 @@ const Wallet = ({
       }}
     >
       <div className="h-[1.5rem] w-[1.5rem] rounded-[5px]">
-        <Image
-          alt={connector.name}
-          loader={loader}
-          src={icon}
-          width={70}
-          height={70}
-          className="h-full w-full object-cover rounded-[5px]"
-        />
+        <div className="relative w-[70px] h-[70px] rounded-[5px] overflow-hidden">
+          <Image
+            alt={connector.name}
+            loader={loader}
+            src={icon}
+            className="object-cover"
+            fill
+          />
+        </div>
       </div>
       <span className=" text-start m-0">{connector.name}</span>
     </button>

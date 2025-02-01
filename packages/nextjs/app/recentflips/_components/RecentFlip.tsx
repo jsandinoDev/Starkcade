@@ -18,13 +18,15 @@ export default function RecentFlip() {
               className={`flex items-center justify-between pb-1  ${index < 2 ? "border-b border-gray-400 " : ""}`}
             >
               <div className="flex items-center gap-4">
-                <Image
-                  alt={flip.imageAlt}
-                  src={flip.imageSrc}
-                  width={49}
-                  height={51}
-                  className="w-12 h-auto"
-                />
+                <div className="relative w-12 h-[51px]">
+                  <Image
+                    alt={flip.imageAlt}
+                    src={flip.imageSrc}
+                    className="object-contain"
+                    fill
+                  />
+                </div>
+
                 <p className="text-gray-800">
                   <span className="font-bold">
                     {flip.description.split(" ")[0]}
