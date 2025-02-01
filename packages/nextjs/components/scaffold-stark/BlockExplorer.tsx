@@ -6,7 +6,7 @@ import { useNetwork } from "@starknet-react/core";
 import Image from "next/image";
 import GenericModal from "./CustomConnectButton/GenericModal";
 import { useTheme } from "next-themes";
-import Image from "next/image";
+
 
 export const BlockExplorer = () => {
   const { chain: ConnectedChain } = useNetwork();
@@ -76,7 +76,7 @@ export const BlockExplorer = () => {
                       alt="Starknet Developers Hub"
                       className="cursor-pointer"
                       src={blockexplorer.img}
-                      ayout="fill"  
+                      layout="fill"  
                       objectFit="cover"
                     />
                   </div>

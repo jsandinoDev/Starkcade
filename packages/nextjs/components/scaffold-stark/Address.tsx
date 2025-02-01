@@ -107,7 +107,7 @@ export const Address = ({
         {getStarknetPFPIfExists(profile?.profilePicture) ? (
           //eslint-disable-next-line @next/next/no-img-element
           <Image
-            src={profile?.profilePicture}
+            src={profile?.profilePicture || ""}
             alt="Profile Picture"
             className="rounded-full h-6 w-6"
             width={24}

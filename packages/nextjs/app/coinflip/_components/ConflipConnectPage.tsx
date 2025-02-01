@@ -76,13 +76,14 @@ export const ConflipConnectPage = () => {
       <h1 className="text-lg font-semibold mt-3 pt-4">#1 Starknet Coinflip</h1>
 
       <div className="flex justify-center mt-3">
-        <Image
-          src="/coin-removebg.png"
-          alt="Web3 Arcade Coin"
-          className="w-48 h-48 md:w-64 md:h-64"
-          width={192}
-          height={192}
-        />
+        <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto">
+              <Image
+                src="/coin-removebg.png"
+                alt="Web3 Arcade Coin"
+                className="object-contain"
+                fill
+              />
+            </div>
       </div>
 
       <div className="flex justify-center mt-6">
