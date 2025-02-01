@@ -34,16 +34,14 @@ const Wallet = ({
         handleConnectWallet(e, connector);
       }}
     >
-      <div className="h-[1.5rem] w-[1.5rem] rounded-[5px]">
-        <div className="relative w-[70px] h-[70px] rounded-[5px] overflow-hidden">
-          <Image
-            alt={connector.name}
-            loader={loader}
-            src={icon}
-            className="object-cover"
-            fill
-          />
-        </div>
+      <div className="h-[1.5rem] w-[1.5rem] rounded-[5px] overflow-hidden relative">
+        <Image
+          alt={connector.name}
+          loader={loader}
+          src={icon}
+          className="object-cover"
+          fill
+        />
       </div>
       <span className=" text-start m-0">{connector.name}</span>
     </button>
