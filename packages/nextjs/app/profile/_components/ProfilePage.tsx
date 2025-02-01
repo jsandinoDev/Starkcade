@@ -10,6 +10,7 @@ import {
   UsersIcon,
 } from "@heroicons/react/24/solid";
 import { ProfileEditForm } from "./ProfileEditForm";
+import Image from "next/image";
 
 const USERNAME_MAX_LENGTH = 20;
 
@@ -118,11 +119,14 @@ export const ProfilePage = () => {
         <div className="flex justify-center h-4 text-white text-4xl">
           {userName}
         </div>
-        <img
-          src="/coin-removebg.png"
-          alt="Web3 Arcade Coin"
-          className="w-24 h-24 md:w-64 md:h-64 flex justify-center"
-        />
+        <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto">
+            <Image
+              src="/coin-removebg.png"
+              alt="Web3 Arcade Coin"
+              className="object-contain"
+              fill
+            />
+          </div>
         {editProfile ? (
           <ProfileEditForm
             userName={userName}

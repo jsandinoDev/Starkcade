@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react"
+import Image from "next/image";
 
 export const VerifyAge = () => {
   const [birthDate, setBirthDate] = React.useState("")
@@ -13,11 +14,14 @@ export const VerifyAge = () => {
   return (
     <div className="relative flex justify-center items-center min-h-screen h-full bg-[#1F3149]">
       <div className="relative text-center flex flex-col items-center gap-8">
-        <img
-          src="/coin-removebg.png"
-          alt="Web3 Arcade Coin"
-          className="w-32 h-32"
-        />
+        <div className="relative w-32 h-32">
+            <Image
+              src="/coin-removebg.png"
+              alt="Web3 Arcade Coin"
+              className="object-contain"
+              fill
+            />
+          </div>
         <div className="w-[592px] bg-[#f8f9fa] rounded-2xl p-6 shadow-lg">
           <div className="flex justify-between items-start mb-8">
             <h1 className="text-[#212529] text-2xl font-medium">

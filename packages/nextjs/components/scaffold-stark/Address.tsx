@@ -19,6 +19,7 @@ import { getBlockExplorerAddressLink } from "~~/utils/scaffold-stark";
 import { BlockieAvatar } from "~~/components/scaffold-stark/BlockieAvatar";
 import { getStarknetPFPIfExists } from "~~/utils/profile";
 import useConditionalStarkProfile from "~~/hooks/useConditionalStarkProfile";
+import Image from "next/image";
 
 type AddressProps = {
   address?: AddressType;
@@ -105,8 +106,8 @@ export const Address = ({
       <div className="flex-shrink-0">
         {getStarknetPFPIfExists(profile?.profilePicture) ? (
           //eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={profile?.profilePicture}
+          <Image
+            src={profile?.profilePicture || ""}
             alt="Profile Picture"
             className="rounded-full h-6 w-6"
             width={24}

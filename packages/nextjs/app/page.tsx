@@ -4,6 +4,7 @@ import type { NextPage } from "next";
 import { useAccount } from "~~/hooks/useAccount";
 import StarryBackground from "../components/starryBackground/_components/StarryBackground";
 import { useRouter } from "next/navigation"; 
+import Image from "next/image";
 
 const Home: NextPage = () => {
   const connectedAddress = useAccount();
@@ -27,13 +28,14 @@ const Home: NextPage = () => {
             rewards
           </p>
 
-          <div>
-            <img
+            <div  className="relative w-72 h-72 md:w-96 md:h-96 mx-auto"> 
+            <Image
               src="/starkcade.png"
               alt="Web3 Arcade Coin"
-              className="w-72 h-72 md:w-96 md:h-96 mx-auto"
+              className="object-contain"
+              fill
             />
-          </div>
+            </div>
 
           <button className="px-6 py-3 bg-yellow-500 text-black rounded-full text-lg font-semibold hover:bg-yellow-400 transition duration-300 "
           onClick={handlePlayButtonClick}>

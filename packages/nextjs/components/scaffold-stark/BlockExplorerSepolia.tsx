@@ -7,6 +7,7 @@ import Image from "next/image";
 import GenericModal from "./CustomConnectButton/GenericModal";
 import { useTheme } from "next-themes";
 
+
 export const BlockExplorerSepolia = () => {
   const { chain: ConnectedChain } = useNetwork();
 
@@ -75,8 +76,9 @@ export const BlockExplorerSepolia = () => {
                       <Image
                         alt="Starknet Developers Hub"
                         className="cursor-pointer"
-                        fill
                         src={blockexplorer.img}
+                        layout="fill" 
+                        objectFit="cover"
                       />
                     </div>
                     <p className="text-sm m-0">{blockexplorer.name}</p>

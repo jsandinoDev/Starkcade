@@ -11,6 +11,7 @@ import { useTheme } from "next-themes";
 import { LAST_CONNECTED_TIME_LOCALSTORAGE_KEY } from "~~/utils/Constants";
 import { BlockieAvatar } from "~~/components/scaffold-stark";
 import GenericModal from "~~/components/scaffold-stark/CustomConnectButton/GenericModal";
+import Image from "next/image";
 
 export const ConflipConnectPage = () => {
   const loader = ({ src }: { src: string }) => {
@@ -75,11 +76,14 @@ export const ConflipConnectPage = () => {
       <h1 className="text-lg font-semibold mt-3 pt-4">#1 Starknet Coinflip</h1>
 
       <div className="flex justify-center mt-3">
-        <img
-          src="/coin-removebg.png"
-          alt="Web3 Arcade Coin"
-          className="w-48 h-48 md:w-64 md:h-64"
-        />
+        <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto">
+              <Image
+                src="/coin-removebg.png"
+                alt="Web3 Arcade Coin"
+                className="object-contain"
+                fill
+              />
+            </div>
       </div>
 
       <div className="flex justify-center mt-6">
@@ -166,10 +170,12 @@ export const ConflipConnectPage = () => {
               className="flex items-center justify-between p-3 bg-white rounded-lg shadow-sm"
             >
               <div className="flex items-center space-x-4">
-                <img
+                <Image
                   src={flip.icon}
                   alt={`${flip.user} icon`}
                   className="w-12 h-10 rounded-full"
+                  width={48}
+                  height={40}
                 />
                 <p className="text-gray-800">
                   <span className="font-bold">{flip.user}</span> {flip.message}

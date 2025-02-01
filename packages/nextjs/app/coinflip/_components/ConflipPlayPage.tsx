@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CoinFlip from "../../coinflipAnimation";
+import Image from "next/image";
 
 export const ConflipPlayPage = () => {
   const [selectedChoice, setSelectedChoice] = useState("");
@@ -11,12 +12,15 @@ export const ConflipPlayPage = () => {
   return (
     <div className="relative flex justify-center items-center min-h-screen text-white overflow-hidden">
       {isProcessing ? (
-        <div className="flex flex-col gap-[1em] justify-center items-center min-h-screen">
-          <img
-            src="/coin-removebg.png"
-            alt="Web3 Arcade Coin"
-            className="w-48 h-48 md:w-64 md:h-64 mx-auto animate-spin duration-800"
-          />
+        <div className="flex flex-col gap-4 justify-center items-center min-h-screen">
+          <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto">
+            <Image
+              src="/coin-removebg.png"
+              alt="Web3 Arcade Coin"
+              className="object-contain"
+              fill
+            />
+          </div>
           <h1 className="text-yellow-600 font-[600] text-[25px]">
             Please wait, transaction is processing...
           </h1>
@@ -29,11 +33,14 @@ export const ConflipPlayPage = () => {
       ) : (
         <div className="relative text-center p-4 space-y-6 -z-5">
           <div className="flex justify-center">
-            <img
+          <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto">
+            <Image
               src="/coin-removebg.png"
               alt="Web3 Arcade Coin"
-              className="w-48 h-48 md:w-64 md:h-64 mx-auto"
+              className="object-contain"
+              fill
             />
+          </div>
           </div>
 
           <div className="flex justify-center relative">

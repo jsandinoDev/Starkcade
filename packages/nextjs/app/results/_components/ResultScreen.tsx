@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Image from "next/image";
 
 interface ResultScreenProps {
   isWin?: boolean;
@@ -22,11 +23,13 @@ export const ResultScreen = ({ isWin = true }: ResultScreenProps) => {
   return (
     <div className="relative flex justify-center items-center min-h-screen text-white overflow-hidden">
       <div className="relative text-center p-4 space-y-6 -z-5 max-w-sm mx-auto">
-        <div className="flex justify-center">
-          <img
+        <div className="relative w-32 h-32 md:w-48 md:h-48 mx-auto flex justify-center items-center">
+        <Image
             src={mockWin ? "/happy_coin.png" : "/sad_coin.png"}
             alt={mockWin ? "Happy Coin" : "Sad Coin"}
-            className="w-32 h-32 md:w-48 md:h-48 mx-auto"
+            fill
+            className="object-contain"
+
           />
         </div>
 
