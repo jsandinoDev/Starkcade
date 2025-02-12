@@ -25,7 +25,7 @@ mod Coinflip {
     use core::array::ArrayTrait;
     use openzeppelin::access::ownable::OwnableComponent;
     use openzeppelin::token::erc20::interface::{IERC20Dispatcher, IERC20DispatcherTrait};
-    use starknet::{ContractAddress, get_caller_address, get_contract_address, get_block_timestamp};
+    use starknet::{ContractAddress, get_block_timestamp, get_caller_address, get_contract_address};
 
     component!(path: OwnableComponent, storage: ownable, event: OwnableEvent);
 
@@ -382,4 +382,5 @@ mod Coinflip {
 //  View functions
 // const leaderboard = await coinflipContract.get_leaderboard();
 // const balance = await coinflipContract.get_contract_balance();
+
 
