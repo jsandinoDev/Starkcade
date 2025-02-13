@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import { MyFlips } from "~~/app/assets/constants";
 
 
@@ -7,7 +7,7 @@ export default function RecentFlip() {
   const handleButtonClick = () => {
     console.log("GO BACK button clicked");
   };
-  console.log(MyFlips);
+
 
   return (
     <div className="relative flex justify-center items-center min-h-screen overflow-hidden">
@@ -21,13 +21,7 @@ export default function RecentFlip() {
             >
               <div className="flex items-center gap-4">
                 <div className="relative w-12 h-[51px]">
-                  <Image
-                    alt={flip.imageAlt}
-                    src={flip.imageSrc}
-                    className="object-contain"
-                    width={100}
-                    height={100}
-                  />
+                 
                 </div>
 
                 <p className="text-gray-800">
