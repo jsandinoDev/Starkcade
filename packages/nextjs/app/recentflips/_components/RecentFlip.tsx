@@ -1,50 +1,23 @@
 "use client";
 import Image from "next/image";
-import { FC } from "react";
+import { MyFlips } from "~~/app/assets/constants";
 
-interface Flip {
-  imageSrc: string;
-  description: string;
-  time: string;
-  imageAlt: string;
-}
 
-const RecentFlip: FC = () => {
-  const MyFlips: Flip[] = [
-    {
-      imageSrc: "/happy_coin.png",
-      description: "You flipped 0.01 and doubled",
-      time: "5",
-      imageAlt: "Happy Coin",
-    },
-    {
-      imageSrc: "/sad_coin.png",
-      description: "You flipped 2.5 and got rugged",
-      time: "7",
-      imageAlt: "Sad Coin",
-    },
-    {
-      imageSrc: "/happy_coin.png",
-      description: "You flipped 6 and doubled",
-      time: "10",
-      imageAlt: "Happy Coin",
-    },
-  ];
-
-  const handleButtonClick = (): void => {
+export default function RecentFlip() {
+  const handleButtonClick = () => {
     console.log("GO BACK button clicked");
   };
-  
+  console.log(MyFlips);
+
   return (
     <div className="relative flex justify-center items-center min-h-screen overflow-hidden">
-      test 14 yy
-      <div className="bg-white w-[40%] max-w-[560px] min-w-[280px] h-auto">
+      <div className="bg-[hsl(276,25%,92%)] w-[40%] max-w-[560px] min-w-[280px] h-auto rounded-[28px] py-0 px-6 ">
         <h2 className="text-2xl mb-10 w-full text-gray-800">MY RECENT FLIPS</h2>
         <div className="space-y-1">
           {MyFlips.map((flip, index) => (
             <div
               key={index}
-              className={`flex items-center justify-between pb-1 ${index < 2 ? "border-b border-gray-400 " : ""}`}
+              className={`flex items-center justify-between pb-1  ${index < 2 ? "border-b border-gray-400 " : ""}`}
             >
               <div className="flex items-center gap-4">
                 <div className="relative w-12 h-[51px]">
@@ -52,12 +25,14 @@ const RecentFlip: FC = () => {
                     alt={flip.imageAlt}
                     src={flip.imageSrc}
                     className="object-contain"
-                    width={100}
-                    height={100}
+                    fill
                   />
                 </div>
+
                 <p className="text-gray-800">
-                  <span className="font-bold">{flip.description.split(" ")[0]}</span>{" "}
+                  <span className="font-bold">
+                    {flip.description.split(" ")[0]}
+                  </span>{" "}
                   {flip.description.split(" ").slice(1).join(" ")}
                 </p>
               </div>
@@ -76,6 +51,4 @@ const RecentFlip: FC = () => {
       </div>
     </div>
   );
-};
-
-export default RecentFlip;
+}
