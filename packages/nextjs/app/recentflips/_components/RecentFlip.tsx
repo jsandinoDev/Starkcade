@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import { MyFlips } from "../../assets/constants";
+import { MyFlips } from "~~/app/assets/constants";
+
 
 export default function RecentFlip() {
   const handleButtonClick = () => {
