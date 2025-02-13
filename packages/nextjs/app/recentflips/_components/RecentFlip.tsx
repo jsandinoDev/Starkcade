@@ -1,13 +1,13 @@
-"use client";
+"use client"
 
-import { MyFlips } from "~~/app/assets/constants";
-
+import Image from "next/image"
+import { MyFlips } from "~~/app/assets/constants" 
 
 export default function RecentFlip() {
   const handleButtonClick = () => {
-    console.log("GO BACK button clicked");
-  };
-
+    // Implement actual navigation logic here
+    console.log("GO BACK button clicked")
+  }
 
   return (
     <div className="relative flex justify-center items-center min-h-screen overflow-hidden">
@@ -16,18 +16,23 @@ export default function RecentFlip() {
         <div className="space-y-1">
           {MyFlips.map((flip, index) => (
             <div
-              key={index}
-              className={`flex items-center justify-between pb-1  ${index < 2 ? "border-b border-gray-400 " : ""}`}
+              key={flip.id || index}
+              className={`flex items-center justify-between pb-1 ${
+                index < MyFlips.length - 1 ? "border-b border-gray-400" : ""
+              }`}
             >
               <div className="flex items-center gap-4">
                 <div className="relative w-12 h-[51px]">
-                 
+                  <Image
+                    alt={flip.imageAlt}
+                    src={flip.imageSrc || "/placeholder.svg"}
+                    className="object-contain"
+                    fill
+                    sizes="48px"
+                  />
                 </div>
-
                 <p className="text-gray-800">
-                  <span className="font-bold">
-                    {flip.description.split(" ")[0]}
-                  </span>{" "}
+                  <span className="font-bold">{flip.description.split(" ")[0]}</span>{" "}
                   {flip.description.split(" ").slice(1).join(" ")}
                 </p>
               </div>
@@ -35,15 +40,17 @@ export default function RecentFlip() {
             </div>
           ))}
         </div>
-        <div className="mt-5 mb-5 ">
+        <div className="mt-5 mb-5">
           <button
             className="w-full py-3 bg-yellow-500 text-black font-bold rounded-lg hover:bg-yellow-400 transition"
             onClick={handleButtonClick}
+            aria-label="Go back"
           >
             GO BACK
           </button>
         </div>
       </div>
     </div>
-  );
+  )
 }
+
