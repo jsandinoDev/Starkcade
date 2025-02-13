@@ -12,4 +12,6 @@ export default function RecentFlip() {
     <div>
       test
     </div>
+  )
 }
+
