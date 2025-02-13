@@ -1,4 +1,4 @@
-export const MYFLIPS = [
+export const MyFlips = [
   {
     imageSrc: "/happy_coin.png",
     description: "You flipped 0.01 and doubled",
@@ -20,7 +20,7 @@ export const MYFLIPS = [
 ];
 
 
-export const FLIPS = [
+export const Flips = [
   {
     user: "Ricardish",
     message: "flipped 0.01 and doubled",
@@ -42,7 +42,7 @@ export const FLIPS = [
 ];
 
 
-export const TRANSACTIONS = [
+export const Transactions = [
   {
     message: "flipped 0.01 and doubled",
     time: "5",

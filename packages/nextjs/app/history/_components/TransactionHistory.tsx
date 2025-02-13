@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { TRANSACTIONS } from "../../assets/constants";
+import { Transactions } from "../../assets/constants";
 export default function TransactionHistory({
   address,
 }: {
@@ -45,7 +45,7 @@ export default function TransactionHistory({
       <div className="recentflip w-[40%] max-w-[560px] min-w-[280px] h-auto">
         <h2 className="text-2xl w-full text-gray-800">Transaction History</h2>
         <div className="space-y-1">
-          {TRANSACTIONS.map((transaction, index) => (
+          {Transactions.map((transaction, index) => (
             <div
               key={index}
               className={`flex items-center justify-between pb-1 last-of-type:border-0 border-b border-gray-400`}

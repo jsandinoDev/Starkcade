@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { MYFLIPS } from "../../assets/constants";
+import { MyFlips } from "../../assets/constants";
 
 export default function RecentFlip() {
   const handleButtonClick = () => {
@@ -12,7 +12,7 @@ export default function RecentFlip() {
       <div className="recentflip w-[40%] max-w-[560px] min-w-[280px] h-auto">
         <h2 className="text-2xl mb-10 w-full text-gray-800">MY RECENT FLIPS</h2>
         <div className="space-y-1">
-          {MYFLIPS.map((flip, index) => (
+          {MyFlips.map((flip, index) => (
             <div
               key={index}
               className={`flex items-center justify-between pb-1  ${index < 2 ? "border-b border-gray-400 " : ""}`}
