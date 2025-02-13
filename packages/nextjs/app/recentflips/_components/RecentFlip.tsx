@@ -1,11 +1,13 @@
 "use client";
 import Image from "next/image";
-import { MyFlips } from "../../assets/constants";
+import { MyFlips } from "~~/app/assets/constants";
+
 
 export default function RecentFlip() {
   const handleButtonClick = () => {
     console.log("GO BACK button clicked");
   };
+  console.log(MyFlips);
 
   return (
     <div className="relative flex justify-center items-center min-h-screen overflow-hidden">
