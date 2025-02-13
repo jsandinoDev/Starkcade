@@ -1,11 +1,16 @@
 "use client";
 import Image from "next/image";
+import { FC } from "react";
 
+interface Flip {
+  imageSrc: string;
+  description: string;
+  time: string;
+  imageAlt: string;
+}
 
-
-export default function RecentFlip() {
-
- const MyFlips = [
+const RecentFlip: FC = () => {
+  const MyFlips: Flip[] = [
     {
       imageSrc: "/happy_coin.png",
       description: "You flipped 0.01 and doubled",
@@ -26,21 +31,20 @@ export default function RecentFlip() {
     },
   ];
 
-
-  const handleButtonClick = () => {
+  const handleButtonClick = (): void => {
     console.log("GO BACK button clicked");
   };
-  console.log(MyFlips);
-
+  
   return (
     <div className="relative flex justify-center items-center min-h-screen overflow-hidden">
+      test 12
       <div className="recentflip w-[40%] max-w-[560px] min-w-[280px] h-auto">
         <h2 className="text-2xl mb-10 w-full text-gray-800">MY RECENT FLIPS</h2>
         <div className="space-y-1">
           {MyFlips.map((flip, index) => (
             <div
               key={index}
-              className={`flex items-center justify-between pb-1  ${index < 2 ? "border-b border-gray-400 " : ""}`}
+              className={`flex items-center justify-between pb-1 ${index < 2 ? "border-b border-gray-400 " : ""}`}
             >
               <div className="flex items-center gap-4">
                 <div className="relative w-12 h-[51px]">
@@ -52,11 +56,8 @@ export default function RecentFlip() {
                     height={100}
                   />
                 </div>
-
                 <p className="text-gray-800">
-                  <span className="font-bold">
-                    {flip.description.split(" ")[0]}
-                  </span>{" "}
+                  <span className="font-bold">{flip.description.split(" ")[0]}</span>{" "}
                   {flip.description.split(" ").slice(1).join(" ")}
                 </p>
               </div>
@@ -75,4 +76,6 @@ export default function RecentFlip() {
       </div>
     </div>
   );
-}
+};
+
+export default RecentFlip;
