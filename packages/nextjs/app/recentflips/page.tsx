@@ -3,9 +3,7 @@ import RecentFlip from "./_components/RecentFlip";
 
 const Debug: NextPage = () => {
   return (
-        <div>
-          hello
-        </div>
+        <RecentFlip />
   );
 };
 
