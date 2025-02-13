@@ -25,7 +25,8 @@ export default function RecentFlip() {
                     alt={flip.imageAlt}
                     src={flip.imageSrc}
                     className="object-contain"
-                    fill
+                    width={100}
+                    height={100}
                   />
                 </div>
 
