@@ -11,10 +11,10 @@ export default function RecentFlip() {
 
   return (
     <div className="relative flex justify-center items-center min-h-screen overflow-hidden">
-      {/* <div className="recentflip w-[40%] max-w-[560px] min-w-[280px] h-auto">
+      <div className="recentflip w-[40%] max-w-[560px] min-w-[280px] h-auto">
         <h2 className="text-2xl mb-10 w-full text-gray-800">MY RECENT FLIPS</h2>
         <div className="space-y-1">
-          {MyFlips.map((flip, index) => (
+          {/* {MyFlips.map((flip, index) => (
             <div
               key={index}
               className={`flex items-center justify-between pb-1  ${index < 2 ? "border-b border-gray-400 " : ""}`}
@@ -39,7 +39,9 @@ export default function RecentFlip() {
               </div>
               <p className="text-[#333] text-xs">{flip.time} minutes ago</p>
             </div>
-          ))}
+          ))} */}
+
+          test 11
         </div>
         <div className="mt-5 mb-5 ">
           <button
@@ -49,8 +51,7 @@ export default function RecentFlip() {
             GO BACK
           </button>
         </div>
-      </div> */}
-      hey
+      </div>
     </div>
   );
 }
