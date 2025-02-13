@@ -16,7 +16,7 @@ export default function RecentFlip() {
         <div className="space-y-1">
           {MyFlips.map((flip, index) => (
             <div
-              key={flip.id || index}
+              key={index}
               className={`flex items-center justify-between pb-1 ${
                 index < MyFlips.length - 1 ? "border-b border-gray-400" : ""
               }`}
