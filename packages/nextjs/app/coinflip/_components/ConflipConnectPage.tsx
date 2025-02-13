@@ -1,6 +1,6 @@
 "use client";
 
-import { Flips } from "../../assets/constants";
+import { FLIPS } from "../../assets/constants";
 import { Connector, useConnect } from "@starknet-react/core";
 import { useRef, useState } from "react";
 import Wallet from "~~/components/scaffold-stark/CustomConnectButton/Wallet";
@@ -164,7 +164,7 @@ export const ConflipConnectPage = () => {
       <h2 className="mt-7 text-lg font-semibold tracking-wide">Recent Flips</h2>
       <div className="w-full max-w-lg mt-4 rounded-xl p-4">
         <div className="space-y-2">
-          {Flips.map((flip, index) => (
+          {FLIPS.map((flip, index) => (
             <div
               key={index}
               className="flex items-center justify-between p-3 bg-white rounded-lg shadow-sm"

@@ -136,7 +136,6 @@ p {
     clip-path: polygon(100% 100%, 100% 0, 90% 100%);
   }
 }
-
 .recentflip{
   background: var(--Schemes-Surface-Container-High, hsl(276, 25%, 92%));
   top: 169px;
@@ -150,8 +149,6 @@ p {
   padding: 24px 0 0;
   gap: 16px;
   opacity: 0px;
-  
-
 }
 
 .recentflip .btns{
