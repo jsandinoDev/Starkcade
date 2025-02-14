@@ -159,12 +159,9 @@ p {
 gap: 8px;
 border-radius: 100px ;
 opacity: 1;
-
-
 }
 
 .recentflip .content{
- 
 min-height:  56px;
 opacity: 0px;
 

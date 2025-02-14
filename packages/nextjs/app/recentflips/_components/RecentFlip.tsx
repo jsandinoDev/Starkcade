@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { MYFLIPS } from "~~/app/assets/constants";
+import { MY_FLIPS } from "~~/app/assets/constants";
 
 
 export default function RecentFlip() {
@@ -10,10 +10,10 @@ export default function RecentFlip() {
 
   return (
     <div className="relative flex justify-center items-center min-h-screen overflow-hidden">
-      <div className="bg-[hsl(276,25%,92%)] w-[40%] max-w-[560px] min-w-[280px] h-auto rounded-[28px] py-0 px-6 ">
-        <h2 className="text-2xl mb-10 w-full text-gray-800">MY RECENT FLIPS</h2>
+      <div className="recentflip w-[40%] max-w-[560px] min-w-[280px] h-auto">
+      <h2 className="text-2xl mb-10 w-full text-gray-800">MY RECENT FLIPS</h2>
         <div className="space-y-1">
-          {MYFLIPS.map((flip, index) => (
+          {MY_FLIPS.map((flip, index) => (
             <div
               key={index}
               className={`flex items-center justify-between pb-1  ${index < 2 ? "border-b border-gray-400 " : ""}`}

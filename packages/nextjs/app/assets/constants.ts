@@ -1,4 +1,4 @@
-export const MYFLIPS = [
+export const MY_FLIPS = [
   {
     imageSrc: "/happy_coin.png",
     description: "You flipped 0.01 and doubled",
