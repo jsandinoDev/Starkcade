@@ -9,9 +9,12 @@ export default function RecentFlip() {
   };
 
   return (
-    <div className="relative flex justify-center items-center min-h-screen overflow-hidden">
+    <div className="relative flex justify-center items-center min-h-screen">
       <div className="recentflip w-[40%] max-w-[560px] min-w-[280px] h-auto">
       <h2 className="text-2xl mb-10 w-full text-gray-800">MY RECENT FLIPS</h2>
+      <div className="bg-red-500">
+       If you see this, Tailwind is working!
+       </div>
         <div className="space-y-1">
           {MY_FLIPS.map((flip, index) => (
             <div
