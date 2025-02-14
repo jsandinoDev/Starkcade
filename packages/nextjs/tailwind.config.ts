@@ -3,7 +3,8 @@ module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
-    "./utils/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./styles/**/*.{css,js,ts,jsx,tsx}",
   ],
   plugins: [require("daisyui")],
   darkTheme: "class",
