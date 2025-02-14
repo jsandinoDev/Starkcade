@@ -126,6 +126,17 @@ export const AddressInfoDropdown = ({
             <button
               className="btn-sm !rounded-xl flex gap-3 py-3"
               onClick={() => {
+                window.location.href = "/recentflips";
+              }}
+            >
+              <UserCircleIcon className="h-6 w-4 ml-2 sm:ml-0" />
+              <span className="whitespace-nowrap">Recent Flips</span>
+            </button>
+          </li>
+          <li className={selectingNetwork ? "hidden" : ""}>
+            <button
+              className="btn-sm !rounded-xl flex gap-3 py-3"
+              onClick={() => {
                 window.location.href = "/leaderboard";
               }}
             >
