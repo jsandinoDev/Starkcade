@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ScaffoldStarkAppWithProviders } from "~~/components/ScaffoldStarkAppWithProviders";
-import "~~/styles/globals.css";
+import "../styles/globals.css";
 import { ThemeProvider } from "~~/components/ThemeProvider";
 import StarryBackground from "~~/components/starryBackground/_components/StarryBackground";
 
