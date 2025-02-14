@@ -40,7 +40,7 @@ p {
   filter: blur(229px);
   position: absolute;
   top: 0;
-  display: none 
+  display: none;
 }
 
 .circle-gradient-blue {
@@ -50,7 +50,7 @@ p {
   position: absolute;
   top: 0;
   right: 0;
-  display: none 
+  display: none;
 }
 
 .border-gradient {
@@ -102,7 +102,7 @@ p {
   border-radius: 630px;
   background: #7353d2;
   filter: blur(229px);
-  display: none 
+  display: none;
 }
 
 .circle-gradient-blue-dark {
@@ -112,7 +112,7 @@ p {
   position: absolute;
   top: 0;
   right: 0;
-  display: none 
+  display: none;
 }
 
 @layer utilities {
@@ -136,33 +136,29 @@ p {
     clip-path: polygon(100% 100%, 100% 0, 90% 100%);
   }
 }
-.recentflip{
+.recentflip {
   background: var(--Schemes-Surface-Container-High, hsl(276, 25%, 92%));
   top: 169px;
   left: 248px;
   gap: 0px;
   border-radius: 28px;
-  opacity: 0px;
- padding: 0px 24px;
+  padding: 0px 24px;
 }
-.recentflip h2{
+.recentflip h2 {
   padding: 24px 0 0;
   gap: 16px;
-  opacity: 0px;
 }
 
-.recentflip .btns{
+.recentflip .btns {
   background: rgba(242, 199, 28, 1);
   display: flex;
   justify-content: center;
   align-items: center;
-gap: 8px;
-border-radius: 100px ;
-opacity: 1;
+  gap: 8px;
+  border-radius: 100px;
+  opacity: 1;
 }
 
-.recentflip .content{
-min-height:  56px;
-opacity: 0px;
-
+.recentflip .content {
+  min-height: 56px;
 }
