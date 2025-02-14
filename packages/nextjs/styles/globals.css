@@ -147,7 +147,6 @@ p {
 .recentflip h2 {
   padding: 24px 0 0;
   gap: 16px;
-  opacity: 0px;
 }
 
 .recentflip .btns {
@@ -162,5 +161,4 @@ p {
 
 .recentflip .content {
   min-height: 56px;
-  opacity: 0px;
 }
