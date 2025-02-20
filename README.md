@@ -19,6 +19,8 @@ The game leverages Starknet for decentralized, low-cost, and secure interactions
 ## 📞 Join our community
 [Discord](https://discord.gg/ZSyShWJmHB)
 
+[Telegram](https://t.me/+ZsYpSB8RZR4yNjBh)
+
 ## 💻 Local Development
 
 ### Prerequisites
