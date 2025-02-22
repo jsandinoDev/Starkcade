@@ -10,8 +10,8 @@ export default function RecentFlip() {
 	};
 
 	return (
-		<div className="relative flex justify-center items-center min-h-screen">
-			<div className="recentflip w-[40%] max-w-[560px] min-w-[280px] h-auto">
+		<div className="relative flex justify-center items-center min-h-screen overflow-hidden w-full p-8 sm:p-12">
+			<div className="w-auto md:w-full md:max-w-[600px] col-span-12 md:col-span-6 h-auto bg-[#ece6f0] rounded-[28px] py-[24px] px-[16px] lg:px-[24px]">
 				<h2 className="text-2xl mb-10 w-full text-gray-800">MY RECENT FLIPS</h2>
 				<div className="space-y-1">
 					{MY_FLIPS.map((flip, index) => (
