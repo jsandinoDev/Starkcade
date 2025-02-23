@@ -13,7 +13,6 @@ import {
 import { useOutsideClick } from "~~/hooks/scaffold-stark";
 import { CustomConnectButton } from "~~/components/scaffold-stark/CustomConnectButton";
 import { usePathname } from "next/navigation";
-import StarryBackground from "../components/starryBackground/_components/StarryBackground";
 import ToggleMode from "./ToggleMode";
 import { useAccount } from "~~/hooks/useAccount";
 
@@ -94,12 +93,11 @@ export const Header = () => {
 
   useOutsideClick(
     burgerMenuRef,
-    useCallback(() => setIsDrawerOpen(false), []),
+    useCallback(() => setIsDrawerOpen(false), [])
   );
 
   return (
     <div className="relative">
-      <StarryBackground />
       <div className="relative z-10 top-0 navbar min-h-0 flex-shrink-0 px-4 sm:px-6 lg:px-8 border-b border-yellow-500">
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center gap-4">
