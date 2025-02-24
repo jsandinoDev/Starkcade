@@ -1,21 +1,33 @@
 "use client";
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { TRANSACTIONS } from "../../assets/constants";
+
 export default function TransactionHistory({
   address,
 }: {
   address: `0x${string}` | undefined;
 }) {
   const router = useRouter();
-  const [name, setName] = useState("");
 
-  const handleSave = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const [name, setName] = useState(() => {
+    const savedName = localStorage.getItem("userName");
+    return savedName ?? "Coinflip Expert";
+  });
+
+  useEffect(() => {
+    const savedName = localStorage.getItem("userName");
+    if (!savedName) {
+      router.push("/profile");
+    }
+  }, [router]);
+
+  const handleSave = (event: React.MouseEvent) => {
     event.preventDefault();
     console.log("Saving name:", name);
   };
+
   const handleButtonClick = () => {
     router.back();
   };
@@ -24,7 +36,7 @@ export default function TransactionHistory({
     <div className="relative flex flex-col justify-center items-center min-h-screen overflow-hidden">
       <div className="relative text-center p-4 space-y-6 -z-5 w-full flex flex-col justify-center items-center gap-4">
         <div className="flex justify-center h-4 text-4xl">
-          {name || "User Profile"}
+          User Profile
         </div>
         <div className="relative w-24 h-24 md:w-64 md:h-64 mx-auto">
           <Image
@@ -35,13 +47,17 @@ export default function TransactionHistory({
           />
         </div>
         <div className="flex justify-center h-4 text-4xl">
-          {name || "Coinflip Expert"}
+          {name}
         </div>
         <hr className="border-t-2 max-w-xl border-gray-300 flex justify-center w-1/2" />
       </div>
+
       {address && (
-        <p className="my-5 dark:text-white text-yellow-500">Wallet {address}</p>
+        <p className="my-5 dark:text-white text-yellow-500">
+          Wallet {address}
+        </p>
       )}
+
       <div className="recentflip w-[40%] max-w-[560px] min-w-[280px] h-auto">
         <h2 className="text-2xl w-full text-gray-800">Transaction History</h2>
         <div className="space-y-1">
@@ -66,6 +82,7 @@ export default function TransactionHistory({
           ))}
         </div>
       </div>
+
       <div className="mt-5 mb-5 w-full max-w-xl">
         <button
           className="w-full py-3 bg-yellow-500 text-black font-bold rounded-lg hover:bg-yellow-400 transition"
