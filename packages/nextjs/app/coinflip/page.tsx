@@ -1,21 +1,24 @@
-
+"use client";
 
 import type { NextPage } from "next";
-import { CoinflipPage } from './_components/CoinflipPage'
-import { getMetadata } from "~~/utils/scaffold-stark/getMetadata";
-import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { ConflipPlayPage } from './_components/ConflipPlayPage';
+import { isOver18 } from "~~/utils/ageVerification";
 
-export const metadata = getMetadata({
-  title: "Coinflip",
-  description:
-    "Interactive and decentralized CoinFlip game built on the Starknet blockchain.",
-});
 
 const Debug: NextPage = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isOver18()) {
+      router.push('/verifyage');
+    }
+  }, [router]);
+
   return (
     <>
-      <CoinflipPage />
-      
+      <ConflipPlayPage />
     </>
   );
 };
