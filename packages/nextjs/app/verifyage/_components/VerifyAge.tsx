@@ -1,14 +1,35 @@
 "use client"
 
-import React from "react"
+import React, { useState } from "react"
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { calculateAge, setStoredAge } from "~~/utils/ageVerification";
 
 export const VerifyAge = () => {
-  const [birthDate, setBirthDate] = React.useState("")
+  const [birthDate, setBirthDate] = useState("");
+  const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleConfirm = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault()
-    console.log("Birth date:", birthDate)
+    e.preventDefault();
+    
+    if (!birthDate) {
+      setError("Please enter your birth date");
+      return;
+    }
+
+    const age = calculateAge(birthDate);
+    console.log(age);
+    setStoredAge(age);
+
+    if (age < 18) {
+      setError("You must be 18 or older to access this content");
+      setTimeout(() => router.push('/'), 3000);
+      return;
+    }
+
+    setError("");
+    router.push('/coinflip');
   }
 
   return (
@@ -55,10 +76,14 @@ export const VerifyAge = () => {
                 value={birthDate}
                 className="w-full h-12 text-[#212529] text-base bg-white rounded-lg border border-[#000000] px-4 placeholder-[#6c757d] focus:outline-none focus:border-[#000000] focus:ring-1 focus:ring-[#000000]"
               />
+              {error && (
+                <p className="text-red-500 text-sm mt-2">{error}</p>
+              )}
             </div>
             <button
-              className="w-full py-3 bg-[#F2C71C] text-black font-semibold rounded-full hover:bg-[#ffc107] transition-colors"
+              className={`w-full py-3 ${!birthDate ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#F2C71C] hover:bg-[#ffc107]'} text-black font-semibold rounded-full transition-colors`}
               onClick={handleConfirm}
+              disabled={!birthDate}
             >
               CONFIRM
             </button>
