@@ -136,7 +136,7 @@ p {
     clip-path: polygon(100% 100%, 100% 0, 90% 100%);
   }
 }
-.recentflip {
+.custom-card {
   background: var(--Schemes-Surface-Container-High, hsl(276, 25%, 92%));
   top: 169px;
   left: 248px;
@@ -144,12 +144,12 @@ p {
   border-radius: 28px;
   padding: 0px 24px;
 }
-.recentflip h2 {
+.custom-card h2 {
   padding: 24px 0 0;
   gap: 16px;
 }
 
-.recentflip .btns {
+.custom-card .btns {
   background: rgba(242, 199, 28, 1);
   display: flex;
   justify-content: center;
@@ -159,6 +159,6 @@ p {
   opacity: 1;
 }
 
-.recentflip .content {
+.custom-card .content {
   min-height: 56px;
 }
