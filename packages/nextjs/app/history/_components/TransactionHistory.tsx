@@ -32,6 +32,24 @@ export default function TransactionHistory({
     router.back();
   };
 
+  const shortenAddress = (address: string) => {
+    return address.slice(0, 6) + "..." + address.slice(-4);
+  };
+
+  const processMessage = (message: string) => {
+    return message.split(" ").map((word, i) => {
+      if (word.startsWith("0x") && word.length > 10) {
+        return (
+          <span key={i}>
+            <span className="block sm:hidden">{shortenAddress(word)}</span>
+            <span className="hidden sm:inline">{word}</span>
+          </span>
+        );
+      }
+      return word + " ";
+    });
+  };
+
   return (
     <div className="relative flex flex-col justify-center items-center min-h-screen overflow-hidden">
       <div className="relative text-center p-4 space-y-6 -z-5 w-full flex flex-col justify-center items-center gap-4">
@@ -54,42 +72,42 @@ export default function TransactionHistory({
 
       {address && (
         <p className="my-5 dark:text-white text-yellow-500">
-          Wallet {address}
+          <span className="block md:hidden">
+            Wallet {address?.slice(0, 6) + "..." + address?.slice(-4)}
+          </span>
+          <span className="hidden md:block">
+            Wallet {address}
+          </span>
         </p>
       )}
-
-      <div className="recentflip w-[40%] max-w-[560px] min-w-[280px] h-auto">
-        <h2 className="text-2xl w-full text-gray-800">Transaction History</h2>
-        <div className="space-y-1">
-          {TRANSACTIONS.map((transaction, index) => (
-            <div
-              key={index}
-              className={`flex items-center justify-between pb-1 last-of-type:border-0 border-b border-gray-400`}
-            >
-              <div className="flex items-center gap-4">
-                <p className="text-gray-800">
-                  <span className="mr-1">You</span>
-                  <span className="">
-                    {transaction.message.split(" ")[0]}
-                  </span>{" "}
-                  {transaction.message.split(" ").slice(1).join(" ")}
-                </p>
+      <div className="w-full max-w-lg mt-4 rounded-xl p-6">
+        <div className="custom-card h-auto px-8">
+          <h2 className="text-2xl w-full text-gray-800">Transaction History</h2>
+          <div className="space-y-1">
+            {TRANSACTIONS.map((transaction, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-between pb-1 last-of-type:border-0 border-b border-gray-400"
+              >
+                <div className="flex items-center gap-4">
+                  <p className="text-gray-800">
+                    <span className="mr-1">You</span>
+                    {processMessage(transaction.message)}
+                  </p>
+                </div>
+                <p className="text-[#333] text-xs">{transaction.time} minutes ago</p>
               </div>
-              <p className="text-[#333] text-xs">
-                {transaction.time} minutes ago
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-
-      <div className="mt-5 mb-5 w-full max-w-xl">
-        <button
-          className="w-full py-3 bg-yellow-500 text-black font-bold rounded-lg hover:bg-yellow-400 transition"
-          onClick={handleButtonClick}
-        >
-          GO BACK
-        </button>
+        <div className="mt-5 mb-5 h-auto">
+          <button
+            className="w-full py-3 bg-yellow-500 text-black font-bold rounded-lg hover:bg-yellow-400 transition"
+            onClick={handleButtonClick}
+          >
+            GO BACK
+          </button>
+        </div>
       </div>
     </div>
   );
