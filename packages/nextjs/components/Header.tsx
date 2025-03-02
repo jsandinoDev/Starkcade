@@ -34,21 +34,6 @@ export const menuLinks: HeaderMenuLink[] = [
     icon: <CircleStackIcon className="h-4 w-4" />,
   },
   {
-    label: "Recent Flips",
-    href: "/recentflips",
-    icon: <CircleStackIcon className="h-4 w-4" />,
-  },
-  {
-    label: "Leaderboard",
-    href: "/leaderboard",
-    icon: <ChartBarIcon className="h-4 w-4" />,
-  },
-  {
-    label: "Transaction History",
-    href: "/history",
-    icon: <QueueListIcon className="h-4 w-4" />,
-  },
-  {
     label: "Profile",
     href: "/profile",
     icon: <UserIcon className="h-4 w-4" />,
