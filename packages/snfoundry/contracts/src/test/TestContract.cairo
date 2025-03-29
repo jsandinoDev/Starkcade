@@ -266,13 +266,8 @@ fn test_get_leaderboard_full() {
     );
     erc20_dispatcher.transfer(coinflip_address, 10_000_000_000_000_000_000);
     // Define 10 bets: (user, bet_amount)
-    let users = array![
-        contract_address_const::<'user1'>(),
-        contract_address_const::<'user2'>(),
-    ];
-    let bets = array![
-        800_000_000_000_000_000_u256, 1_000_000_000_000_000_000
-    ];
+    let users = array![contract_address_const::<'user1'>(), contract_address_const::<'user2'>(),];
+    let bets = array![800_000_000_000_000_000_u256, 1_000_000_000_000_000_000];
     let n = bets.len();
     // Place each bet from a different user.
     for i in 0
