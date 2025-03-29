@@ -78,6 +78,7 @@ fn test_transfer() {
 }
 
 #[test]
+#[should_panic(expected: 'House edge too high')]
 fn test_verify_house_edge_bug() {
     // Deploy the Coinflip contract
     let contract_address = deploy_coinflip();
@@ -109,6 +110,7 @@ fn test_set_valid_house_edge() {
 }
 
 #[test]
+#[should_panic(expected: 'House edge too high')]
 fn test_edge_case_house_edge_1001() {
     let contract_address = deploy_coinflip();
     let dispatcher = ICoinflipDispatcher { contract_address };
