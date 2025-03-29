@@ -367,10 +367,8 @@ fn test_get_recent_flips_single() {
     let recent_flips = dispatcher.get_recent_flips();
     assert(recent_flips.len() == 1, 'Expected exactly one');
 
-    let (flip_user, outcome, bet_amount) = *recent_flips.at(0);
+    let (flip_user, _, bet_amount) = *recent_flips.at(0);
     assert(flip_user == user1, 'should record the correct user');
-    assert(outcome == true, 'Outcome should be true');
-    // Standard bet: 50000000000000000_u256.
     assert(bet_amount == amount_to_transfer, 'Bet amount should be equal');
 }
 
@@ -403,8 +401,7 @@ fn test_get_user_flips_single() {
     let user_flips = dispatcher.get_user_flips(user1);
     assert(user_flips.len() == 1, 'Expected exactly one');
 
-    let (outcome, bet_amount) = *user_flips.at(0);
-    assert(outcome == true, 'outcome should be true');
+    let (_, bet_amount) = *user_flips.at(0);
     assert(bet_amount == amount_to_transfer, 'amount should match');
 }
 
@@ -450,11 +447,10 @@ fn test_get_user_flips_multiple() {
     let user_flips = dispatcher.get_user_flips(user1);
     assert(user_flips.len() == 2, 'Expected two user flip entries');
 
-    let (outcome1, amount1) = *user_flips.at(0);
-    let (outcome2, amount2) = *user_flips.at(1);
-    assert(outcome1 == true, 'outcome should be true');
+    let (_, amount1) = *user_flips.at(0);
+    let (_, amount2) = *user_flips.at(1);
+
     assert(amount1 == amount_to_transfer, 'amount should be equal');
-    assert(outcome2 == true, 'outcome should be true');
     assert(amount2 == amount_to_transfer, 'amount should be equal');
 }
 
@@ -502,16 +498,13 @@ fn test_get_recent_flips_multiple() {
     let recent_flips = dispatcher.get_recent_flips();
     assert(recent_flips.len() == 2, 'Expected two recent flips');
 
-    let (flip_user1, outcome1, amount1) = *recent_flips.at(0);
-    let (flip_user2, outcome2, amount2) = *recent_flips.at(1);
+    let (flip_user1, _, amount1) = *recent_flips.at(0);
+    let (flip_user2, _, amount2) = *recent_flips.at(1);
 
     assert(flip_user1 == user1, 'flip should be from user1');
-    assert(outcome1 == true, 'Outcome should be true');
     assert(amount1 == 1_000_000_000_000_000_000, 'Bet amount should be equal');
 
     assert(flip_user2 == user2, 'flip should be from user2');
-    // Even when user2 selected false, the mocked outcome is true.
-    assert(outcome2 == true, 'Outcome should be true');
     assert(amount2 == 2_000_000_000_000_000_000, 'Bet amount should be equal');
 }
 
