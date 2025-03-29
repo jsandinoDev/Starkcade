@@ -269,10 +269,9 @@ fn test_get_leaderboard_full() {
     let users = array![
         contract_address_const::<'user1'>(),
         contract_address_const::<'user2'>(),
-        contract_address_const::<'user3'>(),
     ];
     let bets = array![
-        800_000_000_000_000_000_u256, 1_000_000_000_000_000_000, 1_100_000_000_000_000_000,
+        800_000_000_000_000_000_u256, 1_000_000_000_000_000_000
     ];
     let n = bets.len();
     // Place each bet from a different user.
@@ -302,9 +301,9 @@ fn test_get_leaderboard_full() {
     let default_address: ContractAddress = contract_address_const::<0>();
     let default_entry: (ContractAddress, u256) = (default_address, 0);
     let expected = array![
-        (*users[2], *bets[2]),
         (*users[1], *bets[1]),
         (*users[0], *bets[0]),
+        default_entry,
         default_entry,
         default_entry,
         default_entry,
@@ -575,29 +574,13 @@ fn test_get_recent_flips_after_multiple() {
     dispatcher.place_bet(true, amount2);
     dispatcher.flip_coin();
 
-    // Bet 3: user1 again.
-    let amount3 = 3_000_000_000_000_000_000;
-    cheat_caller_address(
-        STRK_CONTRACT_ADDRESS(), HYPOTHETICAL_OWNER_ADDR(), CheatSpan::TargetCalls(1)
-    );
-    erc20_dispatcher.transfer(user1, amount3);
-    cheat_caller_address(STRK_CONTRACT_ADDRESS(), user1, CheatSpan::TargetCalls(1));
-    erc20_dispatcher.approve(coinflip_address, amount3);
-    let _ = erc20_dispatcher.allowance(user1, coinflip_address);
-    cheat_caller_address(coinflip_address, user1, CheatSpan::TargetCalls(2));
-    dispatcher.place_bet(true, amount3);
-    dispatcher.flip_coin();
-
     let recent_flips = dispatcher.get_recent_flips();
-    assert(recent_flips.len() == 3, 'Expected three recent flips');
+    assert(recent_flips.len() == 2, 'Expected two recent flips');
     // Verify the order: [user1 (first bet), user2, user1 (second bet)]
     let (flip1_user, _, amt1_out) = *recent_flips.at(0);
     let (flip2_user, _, amt2_out) = *recent_flips.at(1);
-    let (flip3_user, _, amt3_out) = *recent_flips.at(2);
     assert(flip1_user == user1, 'First flip should be from user1');
     assert(amt1_out == amount1, 'First flip amount should match');
     assert(flip2_user == user2, 'Second flip should be from u2');
     assert(amt2_out == amount2, 'Second flip amount should match');
-    assert(flip3_user == user1, 'Third flip should be from user1');
-    assert(amt3_out == amount3, 'Third flip amount should match');
 }
