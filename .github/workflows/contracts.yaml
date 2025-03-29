@@ -31,7 +31,10 @@ jobs:
           scarb-lock: ./packages/snfoundry/contracts/Scarb.lock
 
       - name: Install snfoundry
-        uses: foundry-rs/setup-snfoundry@v3
+        run: |
+          asdf plugin add starknet-foundry || true
+          asdf install starknet-foundry 0.31.0
+          asdf global starknet-foundry 0.31.0
 
       - name: Check Code Format
         run: |
