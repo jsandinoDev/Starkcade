@@ -135,7 +135,11 @@ export const CONNECTED_USERS = [
   },
 ];
 
-export function _update_leaderboard(username: string, amount: number, time: number) {
+export function _update_leaderboard(
+  username: string,
+  amount: number,
+  time: number
+) {
   // check if user exist or not
   let existingUser = LEADERBOARD.find((entry) => entry.username === username);
 
@@ -156,15 +160,14 @@ export function _update_leaderboard(username: string, amount: number, time: numb
 
   // sort leaderboard depends on amount
   LEADERBOARD.sort((a, b) => {
-  // sort depends on amount first
-  if (b.amount !== a.amount) 
-  {
-    return b.amount - a.amount;
-  }
+    // sort depends on amount first
+    if (b.amount !== a.amount) {
+      return b.amount - a.amount;
+    }
 
-  // sort depends on time if the same amount, and the latest will be the front
-  return b.time - a.time;
-  }
+    // sort depends on time if the same amount, and the latest will be the front
+    return b.time - a.time;
+  });
 
   // keep MAX_LEADERBOARD_SIZE on leaderboard
   if (LEADERBOARD.length > MAX_LEADERBOARD_SIZE) {
